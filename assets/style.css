@@ -1,0 +1,34 @@
+h1 {
+    font-size: 67px;
+    text-align: center;
+    font-family: 'Press Start 2P';
+}
+#building {
+    height: 67px; 
+    position: relative;
+    bottom: 12px;
+}
+
+#r1 {
+    color: #c1bde1
+}
+
+#e {
+    color: #069330;
+}
+
+#t {
+    color: #ffc001;
+}
+
+#r2 {
+    color: #011da9;
+}
+
+#o {
+    color: #c20d02;
+}
+
+h2, h3 {
+    font-family: 'Oxanium' ;
+}
