@@ -32,3 +32,12 @@ h1 {
 h2, h3 {
     font-family: 'Oxanium' ;
 }
+
+#consoleButtons {
+    width: 70%;
+}
+
+.button {
+    font-family: 'Oxanium' ;
+    font-weight: bold;
+} 
