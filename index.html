@@ -18,38 +18,38 @@
 <section id="topBoxes">
     <div id="inputField">
         <h3>Input Field</h3>
-            <form>
-                    <h4>Advanced Search</h4>
-                    <div class="grid-container">
-                      <div class="grid-x grid-padding-x">
-                        
-                        <div class="medium-6 cell">
-                          <label>Name
-                            <input type="text" placeholder="Name">
-                          </label>
-                        </div>
-        
-                        <div class="medium-6 cell">
-                          <label>Genre
-                            <input type="text" placeholder="Genre">
-                          </label>
-                        </div>
-                        <div class="medium-6 cell">
-                            <label>Release Date
-                              <input type="text" placeholder="Release Date">
-                            </label>
-                        </div>
-        
-                        <div class="medium-6 cell">
-                            <label>Console
-                              <input type="text" placeholder="Console">
-                            </label>
-                        </div>
-        
-                        </div>
-                    </div>
-            </form>
+        <button class="button" type="button" data-toggle="example-dropdown-bottom-center">Advanced Search</button>
+        <div class="dropdown-pane" data-position="bottom" data-alignment="center" id="example-dropdown-bottom-center" data-dropdown data-auto-focus="true">
+
+          Advanced Search Criteria
+          <form>
+            <div class="grid-container">
+              <div class="grid-x grid-margin-x">
+                <div class="cell medium-6">
+                  <label>Name
+                    <input type="text" placeholder="Name">
+                  </label>
+                </div>
+                <div class="cell medium-6">
+                  <label>Genre
+                    <input type="text" placeholder="Genre">
+                  </label>
+                </div>
+                <div class="cell medium-6">
+                  <label>Release Date
+                    <input type="text" placeholder="Release Date">
+                  </label>
+                </div>
+                <div class="cell medium-6">
+                  <label>Console
+                    <input type="text" placeholder="Console">
+                  </label>
+                </div>
+              </div>
             </div>
+          </form>
+        </div>
+        </div>
     </div>
     <div id="byConsole">
         <h3>By Console</h3>
@@ -77,6 +77,12 @@
     <div id="resultsBox">
     </div>
 </section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/e0d2cdf98c.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js" integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA==" crossorigin="anonymous"></script>
+<script type="text/javascript">
+$(document).foundation();
+</script>
 </body>
 </html>
