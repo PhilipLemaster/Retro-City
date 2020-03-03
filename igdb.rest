@@ -1,0 +1,2 @@
+GET https://api-v3.igdb.com/games/?name=mario
+user-key: f13f3ae70c0329eaf198249bba188dbd
