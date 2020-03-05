@@ -1,0 +1,20 @@
+Genesis = 29
+Xbox = 11
+SNES = 19
+Atari = 59
+Gamecube = 21
+N64 = 4
+Dreamcast = 23
+(5)Gameboy = 33
+PS1 = 7
+NES = 18
+
+~~~~ We want the initial list to pull up Cover, Name, Genres, Rating
+
+
+
+
+
+
+if we do really good on above,
+~~~~ Upon toggle, pull up Summary, Screenshots
