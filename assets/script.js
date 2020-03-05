@@ -7,14 +7,17 @@ $("#genButton").on("click", function() {
     // Ajax code to grab images from 'queryURL'
     $.ajax({
       url: queryURL,
-      method: "GET",
+      method: "POST",
       headers: {
           'user-key' : 'f13f3ae70c0329eaf198249bba188dbd',
           'Accept' : 'Application/JSON'
-      },
-      data : {
-          'fields' : 'category, cover, genres, name, platforms'
-      }
+      }, 
+
+      data : 'fields name,summary; where platforms = 4 ; sort popularity desc; limit 50;'
+        
+               
+
+            
     })
 
     // Run a function after 'GETting' from Ajax
