@@ -11,7 +11,16 @@ POST https://api-v3.igdb.com/games
 user-key: f13f3ae70c0329eaf198249bba188dbd
 
 
-fields name,summary,rating; where platforms = 4 ; sort popularity desc; limit 50;
+fields name,summary,rating,cover.url,release_dates.human,platforms.name; where platforms = 4 ; sort popularity desc; limit 50;
+
+###
+
+# Genesis Button Image
+POST https://api-v3.igdb.com/covers
+user-key: f13f3ae70c0329eaf198249bba188dbd
+
+
+fields url; where platforms = 4 ; sort popularity desc; limit 50;
 
 ###
 
