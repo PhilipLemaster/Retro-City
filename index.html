@@ -22,86 +22,88 @@
     <br>
     <br>
   </div>
-  
-    <header>
-        <h1>
-            <span id="r1">R</span><span id="e">E</span><span id="t">T</span><span id="r2">R</span><span id="o">O </span><span>C</span><i class="fas fa-building" id="building"></i><span>TY</span> 
-        </h1>
-    </header>
-    <br>
-<section id="topBoxes">
-    <div id="inputField">
-        <h3>Input Field</h3>
-        <button class="button" type="button" data-toggle="example-dropdown-bottom-center" id="ainfobut">Advanced Search</button>
-        <div class="dropdown-pane" data-position="bottom" data-alignment="center" id="example-dropdown-bottom-center" data-dropdown data-auto-focus="true">
+  <div class="inputcontent">
+        <header>
+          <h1>
+              <span id="r1">R</span><span id="e">E</span><span id="t">T</span><span id="r2">R</span><span id="o">O </span><span>C</span><i class="fas fa-building" id="building"></i><span>TY</span> 
+          </h1>
+      </header>
+      <br>
+    <section id="topBoxes">
+      <div id="inputField">
+          <h3>Input Field</h3>
+          <button class="button" type="button" data-toggle="example-dropdown-bottom-center" id="ainfobut">Advanced Search</button>
+          <div class="dropdown-pane" data-position="bottom" data-alignment="center" id="example-dropdown-bottom-center" data-dropdown data-auto-focus="true">
 
-          Advanced Search
-          <form>
-            <div class="grid-container">
-              <div class="grid-x grid-margin-x">
-                <div class="cell medium-6">
-                  <label>Name
-                    <input type="text" placeholder="Name">
-                  </label>
-                </div>
-                <div class="cell medium-6">
-                  <label>Genre
-                    <input type="text" placeholder="Genre">
-                  </label>
-                </div>
-                <div class="cell medium-6">
-                  <label>Release Date
-                    <input type="text" placeholder="Release Date">
-                  </label>
-                </div>
-                <div class="cell medium-6">
-                  <label>Console
-                    <input type="text" placeholder="Console">
-                  </label>
+            Advanced Search
+            <form>
+              <div class="grid-container">
+                <div class="grid-x grid-margin-x">
+                  <div class="cell medium-6">
+                    <label>Name
+                      <input type="text" placeholder="Name">
+                    </label>
+                  </div>
+                  <div class="cell medium-6">
+                    <label>Genre
+                      <input type="text" placeholder="Genre">
+                    </label>
+                  </div>
+                  <div class="cell medium-6">
+                    <label>Release Date
+                      <input type="text" placeholder="Release Date">
+                    </label>
+                  </div>
+                  <div class="cell medium-6">
+                    <label>Console
+                      <input type="text" placeholder="Console">
+                    </label>
+                  </div>
                 </div>
               </div>
-            </div>
-          </form>
-        </div>
-        </div>
-    </div>
-    <div id="byConsole">
-        <h3>By Console</h3>
-        <div id="consoleButtons">
-            <div class="expanded button-group">
-                <a class="secondary button" id="genButton">Genesis</a>
-                <a class="success button" id="xButton">Xbox</a>
-                <a class="warning button" id="snesButton">SNES</a>
-                <a class="alert button" id="atariButton">Atari</a>
-                <a class="button" id="gcButton">Gamecube</a>
-              </div>
+            </form>
+          </div>
+          </div>
+      </div>
+      <div id="byConsole">
+          <h3>By Console</h3>
+          <div id="consoleButtons">
               <div class="expanded button-group">
-                <a class="alert button" id="n64Button">N64</a>
-                <a class="warning button" id="dreamButton">Dreamcast</a>
-                <a class="button" id="gboyButton">Gameboy</a>
-                <a class="secondary button" id="ps1Button">PS1</a>
-                <a class="success button" id="nesButton">NES</a>
-              </div>
-        </div>
-    </div>
-</section>
-<br>
-<section id="bottomBox">
-    <h2>List of Games</h2>
-    <table id="results" class="stack">
-      <thead>
-        <tr>
-          <th width="100">Title</th>
-          <th width="100">Image</th>
-          <th width="100">Rating</th>
-          <th width="100">Release Dates</th>
-          <th width="100">Additional Information</th>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
-</section>
+                  <a class="secondary button" id="genButton">Genesis</a>
+                  <a class="success button" id="xButton">Xbox</a>
+                  <a class="warning button" id="snesButton">SNES</a>
+                  <a class="alert button" id="atariButton">Atari</a>
+                  <a class="button" id="gcButton">Gamecube</a>
+                </div>
+                <div class="expanded button-group">
+                  <a class="alert button" id="n64Button">N64</a>
+                  <a class="warning button" id="dreamButton">Dreamcast</a>
+                  <a class="button" id="gboyButton">Gameboy</a>
+                  <a class="secondary button" id="ps1Button">PS1</a>
+                  <a class="success button" id="nesButton">NES</a>
+                </div>
+          </div>
+      </div>
+    </section>
+    <br>
+    <section id="bottomBox">
+      <h2>List of Games</h2>
+      <table id="results" class="stack">
+        <thead>
+          <tr>
+            <th width="100">Title</th>
+            <th width="100">Image</th>
+            <th width="100">Rating</th>
+            <th width="100">Release Dates</th>
+            <th width="100">Additional Information</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </section>
+  </div>
+    
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/e0d2cdf98c.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js" integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA==" crossorigin="anonymous"></script>
