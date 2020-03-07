@@ -70,20 +70,28 @@ $("#n64Button").on("click", function() {
             mcBox.hide();
             var mcTitle = $('<h4>').text(results[i].name);
             mcTitle.appendTo(mcBox);
-            var mcSummary = $('<p>').text(results[i].summary);
-            mcSummary.appendTo(mcBox);
+            
+            if (results[i].summary != undefined || results[i].summary != null) {
+              var mcSummary = $('<p>').text(results[i].summary);
+              mcSummary.appendTo(mcBox);
+            }
+            
             var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
             mcGenres.appendTo(mcBox);
 
           
             for (y = 0; y < 3; y++) {
-                var mcPic = $('<img>');
-                if (results[i].screenshots[y]?.url != undefined) {
-                    mcSource = results[i].screenshots[y]?.url;
-                    mcPic.attr("src", "https://" + mcSource);
-                    mcPic.appendTo(mcBox);
-                    mcPic.addClass('screenshots');
+              if (results[i].screenshots != undefined) {
+                if (results[i].screenshots[y]?.url != undefined || results[i].screenshots[y]?.url != null) {
+                  var mcPic = $('<img>');
+                  mcSource = results[i].screenshots[y]?.url;
+                  mcPic.attr("src", "https://" + mcSource);
+                  mcPic.appendTo(mcBox);
+                  mcPic.addClass('screenshots');
                 }
+              }
+                
+                
             }
             
 
@@ -793,7 +801,7 @@ jQuery.ajaxPrefilter(function(options) {
 
 // GAMEBOY BUTTON API PULL AND DOM CREATION
 
-$("#gboyButton").on("click", function() {
+$("#gboyButton").on("click", function() {v
 
 
   var queryURL = "https://api-v3.igdb.com/games";
