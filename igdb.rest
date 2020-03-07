@@ -11,7 +11,7 @@ POST https://api-v3.igdb.com/games
 user-key: f13f3ae70c0329eaf198249bba188dbd
 
 
-fields name,summary,rating,cover.url,release_dates.human,platforms.name; where platforms = 4 ; sort popularity desc; limit 50;
+fields name,summary,rating,cover.url,release_dates.human,platforms.name; where platforms = 19 ; sort popularity desc; limit 50;
 
 ###
 
@@ -28,4 +28,14 @@ POST https://api-v3.igdb.com/search
 user-key: f13f3ae70c0329eaf198249bba188dbd
 
 
-fields *; search "sonic the hedgehog"; limit 50;
+fields name; search "earthworm"; limit 50;
+
+###
+
+# SNES Button
+POST https://api-v3.igdb.com/games
+user-key: f13f3ae70c0329eaf198249bba188dbd
+
+
+fields screenshots.url; where platforms = 29 ;
+###
