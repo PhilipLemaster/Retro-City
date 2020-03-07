@@ -80,6 +80,13 @@ p {
     font-size: 20px;
 }
 
+<<<<<<< HEAD
+th {
+    font-family: 'Press Start 2P';
+    
+}
+=======
+>>>>>>> 98ab42df7085b1758d6e70c677b6d303adadc7ef
 
 @media only screen and (max-width: 1024px) {
 
