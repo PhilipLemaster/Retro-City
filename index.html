@@ -32,7 +32,7 @@
 <section id="topBoxes">
     <div id="inputField">
         <h3>Input Field</h3>
-        <button class="button" type="button" data-toggle="example-dropdown-bottom-center">Advanced Search</button>
+        <button class="button" type="button" data-toggle="example-dropdown-bottom-center" id="ainfobut">Advanced Search</button>
         <div class="dropdown-pane" data-position="bottom" data-alignment="center" id="example-dropdown-bottom-center" data-dropdown data-auto-focus="true">
 
           Advanced Search
@@ -88,16 +88,24 @@
 <br>
 <section id="bottomBox">
     <h2>List of Games</h2>
-    <table class="ajax">
-
+    <table id="results" class="stack">
+      <thead>
+        <tr>
+          <th width="100">Title</th>
+          <th width="100">Image</th>
+          <th width="100">Rating</th>
+          <th width="100">Release Dates</th>
+          <th width="100">Additional Information</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
     </table>
 </section>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/e0d2cdf98c.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js" integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA==" crossorigin="anonymous"></script>
-<script type="text/javascript">
-$(document).foundation();
-</script>
+<script type="text/javascript">$(document).foundation();</script>
 <script src="assets/script.js"></script>
 </body>
 </html>

@@ -1,17 +1,3 @@
-// answerButtonsElement.style.visibility = "hidden";
- 
-// function setTime() {
-//     var timerInterval = setInterval(function() {
-//       secondsLeft--;
-//       timeEl.textContent = " Time left: " + secondsLeft;
-  
-//   if(secondsLeft === 0 || clicks === 2) {
-//         clearInterval(timerInterval);
-//         questionContainerElement.style.display = "none"
-//         forms.style.visibility = "visible";
-//         alert("Hey your score is: " + score);
-
-
 $(".gif").on("click", function() {
 
   $(".splash").hide(100);
@@ -19,14 +5,13 @@ $(".gif").on("click", function() {
 
 });
 
+// N64 BUTTON API PULL AND DOM CREATION
 
-// Adding event listener to cat button
-$("#genButton").on("click", function() {
+$("#n64Button").on("click", function() {
 
-    // Getting API url for cat images
+
     var queryURL = "https://api-v3.igdb.com/games";
 
-    // Ajax code to grab images from 'queryURL'
     $.ajax({
       url: queryURL,
       method: "POST",
@@ -35,18 +20,45 @@ $("#genButton").on("click", function() {
           'Accept' : 'Application/JSON'
       }, 
 
-      data : 'fields name,summary,rating,genres; where platforms = 29 ; sort popularity desc; limit 50;'
-        
-               
+      data : 'fields name,rating,cover.url,release_dates.human,platforms.name; where platforms = 4 ; sort popularity desc; limit 50;'
+      })
 
-            
-    })
-
-    // Run a function after 'GETting' from Ajax
       .then(function(response) {
+        var results = response;
+        coverimage = response.cover
+        console.log(response);
 
-      console.log(response);
+        var table = $('#results');
+        var tBody = $('<tbody>');
+        
+
+        for (var i = 0; i < 50; i++) {
+            var tRow = $('<tr>');
+            tRow.appendTo(tBody);
+            tBody.appendTo(table);
+
+            var title = $('<th>').text(results[i].name);
+            title.appendTo(tRow);
+
+            source = String(results[i].cover?.url);
+            var image = $('<img>');
+            image.attr("src", "https://" + source);
+            image.appendTo(tRow);
+
+            var rating = $('<th>').text(Math.round(parseInt(results[i].rating)));
+            rating.appendTo(tRow);
+
+            var releaseDates = $('<th>').text(results[i].release_dates[0]?.human);
+            releaseDates.appendTo(tRow);
+
+            var moreContent = $('<button>More Info</button>');
+            $(moreContent).addClass('clear button warning');
+            moreContent.appendTo(tRow);
+            
+          }
       });
+
+      
   });
 
   jQuery.ajaxPrefilter(function(options) {
