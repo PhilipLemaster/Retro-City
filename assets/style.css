@@ -62,13 +62,7 @@ h3 {
     font-family: 'Oxanium' ;
 }
 
-.invis {
-    display: none;
-}
 
-.visible {
-    display: contents;
-}
 
 img {
     height: 200px;
@@ -85,6 +79,7 @@ p {
     font-family: 'VT323';
     font-size: 20px;
 }
+
 
 @media only screen and (max-width: 1024px) {
 
