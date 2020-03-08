@@ -1212,3 +1212,61 @@ $("#nesButton").on("click", function() {
         options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
     }
 });
+
+// SEARCH INPUT API PULL AND DOM CREATION
+
+
+
+$("#submitButton").on("click", function() {
+
+    var nameinput = String($('#nameInput').val());
+    var queryURL = "http://www.gamespot.com/api/games/?api_key=0e27e3e25c2d1e2fdf52fae8191317b1730d9589&format=json&filter=name:" + nameinput;
+    
+    $.ajax({
+      url: queryURL,
+      method: "GET",
+      })
+
+      .then(function(response) {
+        var results = response.results;
+        console.log(results)
+        console.log(nameinput)
+
+        var tBody = $('tbody');
+        tBody.empty();      
+
+        for (var i = 0; i < 50; i++) {
+            // Variables for main table
+            var tRow = $('<tr>');
+            tRow.appendTo(tBody);
+
+            var title = $('<th>').text(results[i].name);
+            title.appendTo(tRow);
+
+            var source = String(results[i].image?.original);
+            var image = $('<img>');
+            image.attr("src", source);
+            image.appendTo(tRow);
+
+            var releaseDate = $('<th>').text(results[i].release_date.slice(0,10));
+            releaseDate.appendTo(tRow);
+
+            // Additional Content Button
+
+            var mcBut = $('<button>More Info</button>');
+            $(mcBut).addClass('clear button warning').attr('data-open', 'moreContent');
+            mcBut.appendTo(tRow);
+
+            // Create mcBox and dynamically hide/show
+            
+            var mcBox = $('<div>').appendTo(tRow);
+            mcBox.hide();
+            var mcTitle = $('<h4>').text(results[i].name);
+            mcTitle.appendTo(mcBox);
+
+
+        }
+      })
+});
+
+
