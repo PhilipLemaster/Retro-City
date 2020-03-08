@@ -1213,9 +1213,11 @@ $("#nesButton").on("click", function() {
     }
 });
 
+// CREATE FAVORITES LIST IN LOCAL STORAGE
+
+var favoriteGames = ['']
+
 // SEARCH INPUT API PULL AND DOM CREATION
-
-
 
 $("#submitButton").on("click", function() {
 
@@ -1257,13 +1259,50 @@ $("#submitButton").on("click", function() {
             $(mcBut).addClass('clear button warning').attr('data-open', 'moreContent');
             mcBut.appendTo(tRow);
 
-            // Create mcBox and dynamically hide/show
+            mcBut.click(function(){
+                console.log('sup');
+                $(this).nextAll().toggle();
+            })
+
+            // mcBox with contents from API
             
             var mcBox = $('<div>').appendTo(tRow);
             mcBox.hide();
-            var mcTitle = $('<h4>').text(results[i].name);
-            mcTitle.appendTo(mcBox);
+            var title = $('<h3>').text(results[i].name);
+            title.appendTo(mcBox);
+            var summary = $('<p>').text(results[i].description);
+            summary.appendTo(mcBox);
+            
+            var genres = $('<p>').text('Genres: ');
+            genres.appendTo(mcBox);
+            for (y = 0; y < 3; y++) {
+                if (results[i].genres[y]?.name != undefined)
+                var genreSpan = $('<span>').text(results[i].genres[y]?.name + ', ')
+                genreSpan.appendTo(genres);
+            }
 
+            // Local Storage for Save Button
+
+            // Get current counter from LS and increment it
+                
+
+            // Save Button
+
+            var saveButton = $('<button>Save</button>');
+            saveButton.addClass('clear button alert').appendTo(mcBox);
+            saveButton.click(function(){
+                var thisTitle = $(this).siblings('h3').text()
+                var counter = localStorage.getItem('counter');
+                counter++;
+                localStorage.setItem('favoriteGames:'+ counter, thisTitle);
+                localStorage.setItem('counter', counter);
+
+                var thisImage = $(this).parent().siblings('img').attr('src');
+                var imgCounter = localStorage.getItem('imgCounter');
+                imgCounter++;
+                localStorage.setItem('favoriteGames:'+ imgCounter, thisImage);
+                localStorage.setItem('imgCounter', imgCounter);
+            });
 
         }
       })

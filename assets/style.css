@@ -2,6 +2,14 @@
     overflow-x: hidden;
 }
 
+body {
+    background-image: url(full\ BG.jpg);
+    background-repeat: repeat-y;
+    background-size: contain;
+    background-color: rgba(255, 255, 255, 0.4);
+    background-blend-mode: lighten;
+}
+
 h1 {
     font-size: 67px;
     font-family: 'Press Start 2P';
@@ -98,6 +106,15 @@ th {
     width: 777px;
     
 }
+
+.bold {
+    font-weight: bold;
+}
+
+table {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
 
 @media only screen and (max-width: 1024px) {
 
