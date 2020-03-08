@@ -85,10 +85,11 @@ $("#genButton").on("click", function() {
               var mcSummary = $('<p>').text(results[i].summary);
               mcSummary.appendTo(mcBox);
             }
-            
-            var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
-            mcGenres.appendTo(mcBox);
 
+            if (results[i].genres != undefined || results[i].genres != null) {
+                var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
+                mcGenres.appendTo(mcBox);
+            }
           
             for (y = 0; y < 3; y++) {
               if (results[i].screenshots != undefined) {
@@ -193,8 +194,10 @@ $("#n64Button").on("click", function() {
               mcSummary.appendTo(mcBox);
             }
             
-            var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
-            mcGenres.appendTo(mcBox);
+            if (results[i].genres != undefined || results[i].genres != null) {
+                var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
+                mcGenres.appendTo(mcBox);
+            }
 
           
             for (y = 0; y < 3; y++) {
@@ -300,8 +303,10 @@ $("#xButton").on("click", function() {
               mcSummary.appendTo(mcBox);
             }
             
-            var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
-            mcGenres.appendTo(mcBox);
+            if (results[i].genres != undefined || results[i].genres != null) {
+                var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
+                mcGenres.appendTo(mcBox);
+            }
 
           
             for (y = 0; y < 3; y++) {
@@ -407,9 +412,10 @@ $("#ps1Button").on("click", function() {
               mcSummary.appendTo(mcBox);
             }
             
-            var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
-            mcGenres.appendTo(mcBox);
-
+            if (results[i].genres != undefined || results[i].genres != null) {
+                var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
+                mcGenres.appendTo(mcBox);
+            }
           
             for (y = 0; y < 3; y++) {
               if (results[i].screenshots != undefined) {
@@ -514,8 +520,10 @@ $("#snesButton").on("click", function() {
               mcSummary.appendTo(mcBox);
             }
             
-            var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
-            mcGenres.appendTo(mcBox);
+            if (results[i].genres != undefined || results[i].genres != null) {
+                var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
+                mcGenres.appendTo(mcBox);
+            }
 
           
             for (y = 0; y < 3; y++) {
@@ -621,8 +629,10 @@ $("#atariButton").on("click", function() {
               mcSummary.appendTo(mcBox);
             }
             
-            var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
-            mcGenres.appendTo(mcBox);
+            if (results[i].genres != undefined || results[i].genres != null) {
+                var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
+                mcGenres.appendTo(mcBox);
+            }
 
           
             for (y = 0; y < 3; y++) {
@@ -728,8 +738,10 @@ $("#gcButton").on("click", function() {
               mcSummary.appendTo(mcBox);
             }
             
-            var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
-            mcGenres.appendTo(mcBox);
+            if (results[i].genres != undefined || results[i].genres != null) {
+                var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
+                mcGenres.appendTo(mcBox);
+            }
 
           
             for (y = 0; y < 3; y++) {
@@ -835,8 +847,10 @@ $("#snesButton").on("click", function() {
               mcSummary.appendTo(mcBox);
             }
             
-            var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
-            mcGenres.appendTo(mcBox);
+            if (results[i].genres != undefined || results[i].genres != null) {
+                var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
+                mcGenres.appendTo(mcBox);
+            }
 
           
             for (y = 0; y < 3; y++) {
@@ -942,8 +956,10 @@ $("#dreamButton").on("click", function() {
               mcSummary.appendTo(mcBox);
             }
             
-            var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
-            mcGenres.appendTo(mcBox);
+            if (results[i].genres != undefined || results[i].genres != null) {
+                var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
+                mcGenres.appendTo(mcBox);
+            }
 
           
             for (y = 0; y < 3; y++) {
@@ -1049,8 +1065,10 @@ $("#gboyButton").on("click", function() {
               mcSummary.appendTo(mcBox);
             }
             
-            var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
-            mcGenres.appendTo(mcBox);
+            if (results[i].genres != undefined || results[i].genres != null) {
+                var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
+                mcGenres.appendTo(mcBox);
+            }
 
           
             for (y = 0; y < 3; y++) {
@@ -1156,8 +1174,10 @@ $("#nesButton").on("click", function() {
               mcSummary.appendTo(mcBox);
             }
             
-            var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
-            mcGenres.appendTo(mcBox);
+            if (results[i].genres != undefined || results[i].genres != null) {
+                var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
+                mcGenres.appendTo(mcBox);
+            }
 
           
             for (y = 0; y < 3; y++) {
