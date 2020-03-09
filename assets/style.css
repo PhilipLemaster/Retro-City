@@ -150,6 +150,9 @@ h3 {
     font-size: 100px;
     text-align: center;
     color: white;
+    cursor: pointer;
+    position: relative;
+    top: -60px;
 }
 
 
@@ -164,7 +167,7 @@ img {
     margin-right: auto;
     width: 40%;
     position: relative; 
-    top:-200px;
+    top:-305px;
     
 
 }
@@ -205,26 +208,17 @@ th {
     background-size: contain;
     background-color: rgba(255, 255, 255, 0.4);
     background-blend-mode: lighten;
+    background-repeat: no-repeat;
 }
 
 
 #splash {
     height: 777px;
     width: 777px;
-    position: relative;
-    bottom: 230px;
-    left: 260px;
     cursor: pointer;
 }    
 
-#clickme {
-    position: absolute;
-    left: 581px;
-    bottom: 300px;
-    font-size: 43px;
-    z-index: 1;
-    cursor: pointer;
-}
+
 
 #faqBlock, #oneupBlock, #poison {
     height: 75px;
@@ -237,15 +231,15 @@ th {
 }
 
 #faqBlock {
-    left: 485px;
+    left: 385px;
 }
 
 #oneupBlock {
-    left: 725px;
+    left: 625px;
 }
 
 #poison {
-    left: 965px;
+    left: 865px;
     width: 80px;
 }
 
