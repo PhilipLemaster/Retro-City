@@ -1211,7 +1211,7 @@ $("#nesButton").on("click touchstart", function() {
 
 $("#sTitleButton").on("click touchstart", function() {
 
-    var nameinput = String($('#nameInput').val().substr(0,1).toUpperCase() + String($('#genreInput').val().substr(1).toLowerCase()));
+    var nameinput = String($('#nameInput').val().substr(0,1).toUpperCase() + String($('#nameInput').val().substr(1).toLowerCase()));
     var queryURL = "http://www.gamespot.com/api/games/?api_key=0e27e3e25c2d1e2fdf52fae8191317b1730d9589&format=json&filter=name:" + nameinput;
     
     $.ajax({
@@ -1476,5 +1476,18 @@ $('#oneupBlock').on('click touchstart', function(){
         favImage.appendTo(tRow);
         tRow.appendTo(tBody);
     }
+    var body = $('body');
+    var clearShroom = $('<img>').attr('src', 'https://lh3.googleusercontent.com/proxy/lHhS-AWWbQvjeysVqAxSNLjUZrHTosOjwW5B8u7b1hfrO4PJFh4xHnA7nEpNwcGONQGGZYRXb-rthzjZVkYkjsrAsVP6y4FC');
+    clearShroom.addClass('shroom');
+    clearShroom.appendTo(body);
+    clearShroom.on('click touchstart', function(){
+      localStorage.clear();
+      $(this).animate({
+        width: 'toggle',
+        height: "toggle"
+      }, 3000, function() {
+      });
+    })
+    
         
 })

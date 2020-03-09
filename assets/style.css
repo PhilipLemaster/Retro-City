@@ -3,7 +3,7 @@
     cursor: url("Mario\ Point.png"), url("Mario\ Point.cur"), default;
 }
 
-button:hover, a:hover, #clickme:hover, #splash:hover {
+button:hover, a:hover, #clickme:hover, #splash:hover, .shroom {
     cursor: url('Mario\ Point\ Link.png'), url('Mario\ Point\ Link.cur'), auto;
 }   
 
