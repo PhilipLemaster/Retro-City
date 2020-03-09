@@ -23,7 +23,7 @@ h1 {
 }
 
 #r1 {
-    color: #c1bde1
+    color: #63616e
 }
 
 #e {
@@ -60,18 +60,11 @@ h3 {
     margin-inline-end: 45%;
 }
 
-#consoleButtons {
-    width: fit-content;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0px;
-}
-
 .button {
     font-family: 'Oxanium' ;
     font-weight: bold;
+    padding: auto;
+    margin: 5px;
 } 
 
 #inputField {
@@ -91,7 +84,7 @@ img {
     
 }
 
-p {
+p, li {
     font-family: 'VT323';
     font-size: 20px;
 }
@@ -99,6 +92,11 @@ p {
 th {
     font-family: 'Press Start 2P';
     
+}
+
+.lead {
+    font-weight: bold;
+    font-size: larger;
 }
 
 #splash {
@@ -111,8 +109,9 @@ th {
     font-weight: bold;
 }
 
-table {
-    background-color: rgba(255, 255, 255, 0.7);
+.capitalize 
+{
+    text-transform:capitalize;
 }
 
 
@@ -122,8 +121,6 @@ table {
     text-align: center;
 }
 
-
-    
 #bottomBox {
     align-content: center;
         }
@@ -158,17 +155,30 @@ table {
 img, button, .screenshots {
     margin-inline-start: auto;
     margin-inline-end: auto;
-    display: inline-block;
+    display: block;
 }
 
-#topbuttonGroup {
-    margin-bottom: 0px;
+button {
+    max-width: 70%;
 }
 
 #ainfobut {
     display: block;
     margin-inline-start: auto;
     margin-inline-end: auto;
+}
+
+#faqBlock, #oneupBlock {
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    margin-inline-start: 30px;
+    margin-inline-end: 30px;
+}
+
+#faqBlock:hover, #oneupBlock:hover {
+    height: 50px;
+    width: 50px;
 }
 
 }

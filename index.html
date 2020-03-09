@@ -38,25 +38,32 @@
                 <div class="grid-x grid-margin-x">
                   <div class="cell medium-6">
                     <label>Name
-                      <input type="text" placeholder="Name" id="nameInput">
+                      <input type="text" placeholder="Super Mario World" id="nameInput">
                     </label>
                   </div>
+                  <a class="alert button" id="sTitleButton">Search Title</a>
                   <div class="cell medium-6">
                     <label>Genre
-                      <input type="text" placeholder="Genre" id="genreInput">
+                      <input type="text" placeholder="Shooter, Strategy, etc." id="genreInput" class="capitalize">
                     </label>
                   </div>
                   <div class="cell medium-6">
-                    <label>Release Date
-                      <input type="text" placeholder="Release Date" id="releaseInput">
+                    <label>Platform
+                      <select id="platformSelect">
+                        <option value="genesis">Genesis</option>
+                        <option value="xbox">Xbox</option>
+                        <option value="snes">SNES</option>
+                        <option value="n64">N64</option>
+                        <option value="gameboy">Gameboy</option>
+                        <option value="ps1">PS1</option>
+                        <option value="nes">NES</option>
+                        <option value="dreamcast">Dreamcast</option>
+                        <option value="atari">Atari</option>
+                        <option value="gamecube">Gamecube</option>
+                      </select>
                     </label>
+                    <a class="alert button" id="sGPbutton">Search by Genre/Platform</a>
                   </div>
-                  <div class="cell medium-6">
-                    <label>Console
-                      <input type="text" placeholder="Console" id="platformInput">
-                    </label>
-                  </div>
-                  <a class="alert button" id="submitButton">Submit</a>
                 </div>
               </div>
             </form>
@@ -67,23 +74,60 @@
       <div id="byConsole">
           <h3>By Console</h3>
           <div id="consoleButtons">
-              <div class="expanded button-group" id="topbuttonGroup">
+              <div class="expanded button-group">
                   <a class="secondary button" id="genButton">Genesis</a>
                   <a class="success button" id="xButton">Xbox</a>
                   <a class="warning button" id="snesButton">SNES</a>
-                </div>
-                <div class="expanded button-group"></div>
+              </div>
+              <div class="expanded button-group">
+                <a class="alert button" id="n64Button">N64</a>
+                <a class="button" id="gboyButton">Gameboy</a>
+                <a class="secondary button" id="ps1Button">PS1</a>
+                <a class="success button" id="nesButton">NES</a>
+            </div>
+            <div class="expanded button-group">
                   <a class="warning button" id="dreamButton">Dreamcast</a>
                   <a class="alert button" id="atariButton">Atari</a>
                   <a class="button" id="gcButton">Gamecube</a>
-                </div>
-                <div class="expanded button-group">
-                  <a class="alert button" id="n64Button">N64</a>
-                  <a class="button" id="gboyButton">Gameboy</a>
-                  <a class="secondary button" id="ps1Button">PS1</a>
-                  <a class="success button" id="nesButton">NES</a>
-                </div>
-          </div>
+            </div>
+            <div>
+              <img src="assets/oneUp.png" alt="one up shroom icon" id="oneupBlock">
+              <img src="assets/faq.png" alt="question block icon" id="faqBlock" data-open="faqModal">
+            </div>
+            <div class="reveal" id="faqModal" data-reveal>
+              <h1>FAQ</h1>
+              <p class="lead">The content isn't loading, why?</p>
+              <p>Check your internet connection and clear cookies/browser cache if encountering a 400 error.</p>
+              <p class="lead">When I search for genre, nothing appears?</p>
+              <p>Make sure you are using a genre that the API can recognize, here is a list of valid genres below. Keep in mind that most games fit into more than one of these categories..</p>
+              <ul>
+                <li>Simulator</li>
+                <li>Quiz/Trivia</li>
+                <li>Fighting</li>
+                <li>Strategy</li>
+                <li>Adventure</li>
+                <li>Role-Playing (RPG)</li>
+                <li>Shooter</li>
+                <li>Music</li>
+                <li>Indie</li>
+                <li>Turn-based strategy (TBS)</li>
+                <li>Pinball</li>
+                <li>Platform</li>
+                <li>Racing</li>
+                <li>Sport</li>
+                <li>Arcade</li>
+                <li>Visual Novel</li>
+                <li>Hack and slash/Beat 'em up</li>
+                <li>Point-and-click</li>
+              </ul>
+              <p class="lead">What are all these NaN tags on the games?!</p>
+              <p>The VGDB API was used as a source for the total review rating for each game, and many games have not been rated by the VGDB community. NaN represents these games.</p>
+              <p class="lead">What is the best video game of all time?</p>
+              <p>Super Mario World for the SNES.</p>
+              <button class="close-button" data-close aria-label="Close modal" type="button">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
       </div>
     </section>
     <br>
