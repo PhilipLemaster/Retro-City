@@ -140,7 +140,7 @@ th {
     cursor: pointer;
 }
 
-#faqBlock, #oneupBlock {
+#faqBlock, #oneupBlock, #poison {
     height: 75px;
     width: 75px;
     position: absolute;
@@ -158,7 +158,12 @@ th {
     left: 725px;
 }
 
-#faqBlock:hover, #oneupBlock:hover {
+#poison {
+    left: 965px;
+    width: 80px;
+}
+
+#faqBlock:hover, #oneupBlock:hover, #poison:hover {
     height: 100px;
     width: 100px;
     cursor: url('Mario\ Point\ Link.png'), url('Mario\ Point\ Link.cur'), auto;
@@ -227,7 +232,7 @@ button {
     margin-inline-end: auto;
 }
 
-#faqBlock, #oneupBlock {
+#faqBlock, #oneupBlock, #poison {
     height: 40px;
     width: 40px;
     display: inline-block;
@@ -235,7 +240,7 @@ button {
     margin-inline-end: 30px;
 }
 
-#faqBlock:hover, #oneupBlock:hover {
+#faqBlock:hover, #oneupBlock:hover, #poison:hover {
     height: 50px;
     width: 50px;
 }

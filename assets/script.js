@@ -1481,19 +1481,17 @@ $('#oneupBlock').on('click tap', function(){
         var favImage = $('<img>').attr('src', favImageSource)
         favImage.appendTo(tRow);
         tRow.appendTo(tBody);
-    }
-    var body = $('body');
-    var clearShroom = $('<img>').attr('src', 'https://lh3.googleusercontent.com/proxy/lHhS-AWWbQvjeysVqAxSNLjUZrHTosOjwW5B8u7b1hfrO4PJFh4xHnA7nEpNwcGONQGGZYRXb-rthzjZVkYkjsrAsVP6y4FC');
-    clearShroom.addClass('shroom');
-    clearShroom.appendTo(body);
+    }    
+        
+})
+
+
+var clearShroom = $('#poison');
     clearShroom.on('click tap', function(){
       localStorage.clear();
       $(this).animate({
         width: 'toggle',
         height: "toggle"
-      }, 3000, function() {
-      });
-    })
-    
-        
-})
+      }, 5000, function() {
+      })
+  });
