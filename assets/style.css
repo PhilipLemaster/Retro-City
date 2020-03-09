@@ -1,11 +1,16 @@
 * {
     overflow-x: hidden;
+    cursor: url("Mario\ Point.png"), url("Mario\ Point.cur"), default;
 }
+
+button:hover, a:hover, #clickme:hover, #splash:hover, .shroom {
+    cursor: url('Mario\ Point\ Link.png'), url('Mario\ Point\ Link.cur'), auto;
+}   
 
 body {
     background-image: url(full\ BG.jpg);
     background-repeat: repeat-y;
-    background-size: contain;
+    background-size: auto;
     background-color: rgba(255, 255, 255, 0.4);
     background-blend-mode: lighten;
 }
@@ -99,23 +104,73 @@ th {
     font-size: larger;
 }
 
-#splash {
-    height: 777px;
-    width: 777px;
-    
-}
-
 .bold {
     font-weight: bold;
 }
 
-.capitalize 
-{
+.capitalize {
     text-transform:capitalize;
 }
 
+@media only screen and (min-width: 750px) {
 
-@media only screen and (max-width: 1024px) {
+#divsplash {
+    background-image: url(splashBG.jpg);
+    background-size: contain;
+    background-color: rgba(255, 255, 255, 0.4);
+    background-blend-mode: lighten;
+}
+
+
+#splash {
+    height: 777px;
+    width: 777px;
+    position: relative;
+    bottom: 230px;
+    left: 260px;
+    cursor: pointer;
+}    
+
+#clickme {
+    position: absolute;
+    left: 581px;
+    bottom: 300px;
+    font-size: 43px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+#faqBlock, #oneupBlock {
+    height: 75px;
+    width: 75px;
+    position: absolute;
+    margin-block-start: 30px;
+    margin-block-end: 30px;
+    transition: ease-in height 1s, width, 1s;
+    display: block;
+}
+
+#faqBlock {
+    left: 485px;
+}
+
+#oneupBlock {
+    left: 725px;
+}
+
+#faqBlock:hover, #oneupBlock:hover {
+    height: 100px;
+    width: 100px;
+    cursor: url('Mario\ Point\ Link.png'), url('Mario\ Point\ Link.cur'), auto;
+}
+
+#bottomBox {
+    margin-block-start: 200px;
+}
+
+}
+
+@media only screen and (max-width: 750px) {
 
 * {
     text-align: center;
@@ -147,9 +202,13 @@ th {
 #clickme {
     text-align: center;
     position: relative;
-    top: 64px;
+    top: 76px;
     left: 3px;
     z-index: 1;
+}
+
+img {
+    margin: auto;
 }
 
 img, button, .screenshots {

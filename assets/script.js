@@ -1,17 +1,12 @@
+// SPLASH PAGE HIDE/SHOW CONTENT
 
-$(".inputcontent").hide(100);
-$(".grid-container").hide(100);
-$("#byConsole").hide(100);
-$("#bottomBox").hide(100);
-
-
-$(".gif").on("click touchstart", function() {
+$("#nonsplashContent").hide(100);
+$('#bottomBox').hide(100);
+$(".greeting").on("click touchstart", function() {
 
   $(".splash").hide(100);
-  $(".inputcontent").show(100);
-  $(".grid-container").show(100);
-  $("#byConsole").show(100);
-  $("#bottomBox").show(100);
+  $('#bottomBox').show(100);
+  $("#nonsplashContent").show(100);
   
 
 });
@@ -1216,7 +1211,7 @@ $("#nesButton").on("click touchstart", function() {
 
 $("#sTitleButton").on("click touchstart", function() {
 
-    var nameinput = String($('#nameInput').val());
+    var nameinput = String($('#nameInput').val().substr(0,1).toUpperCase() + String($('#nameInput').val().substr(1).toLowerCase()));
     var queryURL = "http://www.gamespot.com/api/games/?api_key=0e27e3e25c2d1e2fdf52fae8191317b1730d9589&format=json&filter=name:" + nameinput;
     
     $.ajax({
@@ -1244,6 +1239,9 @@ $("#sTitleButton").on("click touchstart", function() {
             var image = $('<img>');
             image.attr("src", source);
             image.appendTo(tRow);
+
+            var placeholder = $('<th>').text(' ');
+            placeholder.appendTo(tRow);
 
             var releaseDate = $('<th>').text(results[i].release_date.slice(0,10));
             releaseDate.appendTo(tRow);
@@ -1376,12 +1374,12 @@ $("#sGPbutton").on("click touchstart", function() {
             image.attr("src", "https://" + source);
             image.appendTo(tRow);
 
-            if (results[i].summary != undefined || results[i].summary != null) {
+            if (results[i].rating != undefined || results[i].rating != null) {
                 var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
                 rating.appendTo(tRow);
             }
 
-            if (results[i].summary != undefined || results[i].summary != null) {
+            if (results[i].release_dates != undefined || results[i].release_dates != null) {
                 var releaseDates = $('<th>').text(results[i].release_dates[0]?.human);
                 releaseDates.appendTo(tRow);
             }
@@ -1478,5 +1476,18 @@ $('#oneupBlock').on('click touchstart', function(){
         favImage.appendTo(tRow);
         tRow.appendTo(tBody);
     }
+    var body = $('body');
+    var clearShroom = $('<img>').attr('src', 'https://lh3.googleusercontent.com/proxy/lHhS-AWWbQvjeysVqAxSNLjUZrHTosOjwW5B8u7b1hfrO4PJFh4xHnA7nEpNwcGONQGGZYRXb-rthzjZVkYkjsrAsVP6y4FC');
+    clearShroom.addClass('shroom');
+    clearShroom.appendTo(body);
+    clearShroom.on('click touchstart', function(){
+      localStorage.clear();
+      $(this).animate({
+        width: 'toggle',
+        height: "toggle"
+      }, 3000, function() {
+      });
+    })
+    
         
 })
