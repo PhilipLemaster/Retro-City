@@ -1,17 +1,12 @@
 
-$(".inputcontent").hide(100);
-$(".grid-container").hide(100);
-$("#byConsole").hide(100);
-$("#bottomBox").hide(100);
+$("#nonsplashContent").hide(100);
+$('#bottomBox').hide(100);
 
-
-$(".gif").on("click touchstart", function() {
+$(".greeting").on("click touchstart", function() {
 
   $(".splash").hide(100);
-  $(".inputcontent").show(100);
-  $(".grid-container").show(100);
-  $("#byConsole").show(100);
-  $("#bottomBox").show(100);
+  $('#bottomBox').show(100);
+  $("#nonsplashContent").show(100);
   
 
 });
