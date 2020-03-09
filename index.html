@@ -37,18 +37,20 @@
             <form>
               <div class="grid-container">
                 <div class="grid-x grid-margin-x">
-                  <div class="cell medium-6">
+                  <div class="cell medium-10">
                     <label>Name
-                      <input type="text" placeholder="Super Mario World" id="nameInput">
+                      <input type="text" placeholder="Super Mario World" id="nameInput" class="capitalize">
                     </label>
                   </div>
-                  <a class="alert button" id="sTitleButton">Search Title</a>
-                  <div class="cell medium-6">
-                    <label>Genre
-                      <input type="text" placeholder="Shooter, Strategy, etc." id="genreInput" class="capitalize">
-                    </label>
+                  <div class="cell medium-10">
+                    <a class="alert button" id="sTitleButton">Search Title</a>
                   </div>
-                  <div class="cell medium-6">
+                  <div class="cell medium-10">
+                      <label>Genre
+                        <input type="text" placeholder="Shooter, Strategy, etc." id="genreInput" class="capitalize">
+                      </label>
+                  </div>
+                  <div class="cell medium-10">
                     <label>Platform
                       <select id="platformSelect">
                         <option value="genesis">Genesis</option>
@@ -63,8 +65,8 @@
                         <option value="gamecube">Gamecube</option>
                       </select>
                     </label>
-                    <a class="alert button" id="sGPbutton">Search by Genre/Platform</a>
                   </div>
+                  <a class="alert button" id="sGPbutton">Search by Genre/Platform</a>
                 </div>
               </div>
             </form>

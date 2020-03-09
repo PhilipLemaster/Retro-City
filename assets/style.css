@@ -5,12 +5,12 @@
 
 button:hover, a:hover, #clickme:hover, #splash:hover {
     cursor: url('Mario\ Point\ Link.png'), url('Mario\ Point\ Link.cur'), auto;
-}
+}   
 
 body {
     background-image: url(full\ BG.jpg);
     background-repeat: repeat-y;
-    background-size: contain;
+    background-size: auto;
     background-color: rgba(255, 255, 255, 0.4);
     background-blend-mode: lighten;
 }
@@ -114,6 +114,14 @@ th {
 
 @media only screen and (min-width: 750px) {
 
+#divsplash {
+    background-image: url(splashBG.jpg);
+    background-size: contain;
+    background-color: rgba(255, 255, 255, 0.4);
+    background-blend-mode: lighten;
+}
+
+
 #splash {
     height: 777px;
     width: 777px;
@@ -197,6 +205,10 @@ th {
     top: 76px;
     left: 3px;
     z-index: 1;
+}
+
+img {
+    margin: auto;
 }
 
 img, button, .screenshots {
