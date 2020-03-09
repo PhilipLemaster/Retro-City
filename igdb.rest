@@ -37,10 +37,12 @@ POST https://api-v3.igdb.com/games
 user-key: f13f3ae70c0329eaf198249bba188dbd
 
 
-fields screenshots.url; where platforms = 29 ;
+fields name,total_rating,cover.url,release_dates.human,platforms.name,summary,genres.name,screenshots.url; where genres.name ="Shooter" & platforms = 29; sort popularity desc; limit 100;
+
 ###
 
 # SNES Button
-GET http://www.gamespot.com/api/games/?api_key=0e27e3e25c2d1e2fdf52fae8191317b1730d9589&format=json&filter=name:mario
+GET http://www.gamespot.com/api/games/?api_key=0e27e3e25c2d1e2fdf52fae8191317b1730d9589&format=json&filter=genres:Arcade
 
+fields genres.name; 
 ###

@@ -38,25 +38,32 @@
                 <div class="grid-x grid-margin-x">
                   <div class="cell medium-6">
                     <label>Name
-                      <input type="text" placeholder="Name" id="nameInput">
+                      <input type="text" placeholder="Super Mario World" id="nameInput">
                     </label>
                   </div>
+                  <a class="alert button" id="sTitleButton">Search Title</a>
                   <div class="cell medium-6">
                     <label>Genre
-                      <input type="text" placeholder="Genre" id="genreInput">
+                      <input type="text" placeholder="Shooter, Strategy, etc." id="genreInput" class="capitalize">
                     </label>
                   </div>
                   <div class="cell medium-6">
-                    <label>Release Date
-                      <input type="text" placeholder="Release Date" id="releaseInput">
+                    <label>Platform
+                      <select id="platformSelect">
+                        <option value="genesis">Genesis</option>
+                        <option value="xbox">Xbox</option>
+                        <option value="snes">SNES</option>
+                        <option value="n64">N64</option>
+                        <option value="gameboy">Gameboy</option>
+                        <option value="ps1">PS1</option>
+                        <option value="nes">NES</option>
+                        <option value="dreamcast">Dreamcast</option>
+                        <option value="atari">Atari</option>
+                        <option value="gamecube">Gamecube</option>
+                      </select>
                     </label>
+                    <a class="alert button" id="sGPbutton">Search by Genre/Platform</a>
                   </div>
-                  <div class="cell medium-6">
-                    <label>Console
-                      <input type="text" placeholder="Console" id="platformInput">
-                    </label>
-                  </div>
-                  <a class="alert button" id="submitButton">Submit</a>
                 </div>
               </div>
             </form>
@@ -67,23 +74,27 @@
       <div id="byConsole">
           <h3>By Console</h3>
           <div id="consoleButtons">
-              <div class="expanded button-group" id="topbuttonGroup">
+              <div class="expanded button-group">
                   <a class="secondary button" id="genButton">Genesis</a>
                   <a class="success button" id="xButton">Xbox</a>
                   <a class="warning button" id="snesButton">SNES</a>
-                </div>
-                <div class="expanded button-group"></div>
+              </div>
+              <div class="expanded button-group">
+                <a class="alert button" id="n64Button">N64</a>
+                <a class="button" id="gboyButton">Gameboy</a>
+                <a class="secondary button" id="ps1Button">PS1</a>
+                <a class="success button" id="nesButton">NES</a>
+            </div>
+            <div class="expanded button-group">
                   <a class="warning button" id="dreamButton">Dreamcast</a>
                   <a class="alert button" id="atariButton">Atari</a>
                   <a class="button" id="gcButton">Gamecube</a>
-                </div>
-                <div class="expanded button-group">
-                  <a class="alert button" id="n64Button">N64</a>
-                  <a class="button" id="gboyButton">Gameboy</a>
-                  <a class="secondary button" id="ps1Button">PS1</a>
-                  <a class="success button" id="nesButton">NES</a>
-                </div>
-          </div>
+            </div>
+            <div>
+              <img src="assets/oneUp.png" alt="one up shroom icon" id="oneupBlock">
+              <img src="assets/faq.png" alt="question block icon" id="faqBlock">
+            </div>
+            
       </div>
     </section>
     <br>
