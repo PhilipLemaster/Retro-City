@@ -24,11 +24,10 @@ fields url; where platforms = 4 ; sort popularity desc; limit 50;
 
 ###
 
-POST https://api-v3.igdb.com/search
+POST https://api-v3.igdb.com/genres
 user-key: f13f3ae70c0329eaf198249bba188dbd
 
-
-fields name; search "earthworm"; limit 50;
+fields name; limit 100;
 
 ###
 

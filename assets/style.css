@@ -84,7 +84,7 @@ img {
     
 }
 
-p {
+p, li {
     font-family: 'VT323';
     font-size: 20px;
 }
@@ -92,6 +92,11 @@ p {
 th {
     font-family: 'Press Start 2P';
     
+}
+
+.lead {
+    font-weight: bold;
+    font-size: larger;
 }
 
 #splash {

@@ -92,9 +92,42 @@
             </div>
             <div>
               <img src="assets/oneUp.png" alt="one up shroom icon" id="oneupBlock">
-              <img src="assets/faq.png" alt="question block icon" id="faqBlock">
+              <img src="assets/faq.png" alt="question block icon" id="faqBlock" data-open="faqModal">
             </div>
-            
+            <div class="reveal" id="faqModal" data-reveal>
+              <h1>FAQ</h1>
+              <p class="lead">The content isn't loading, why?</p>
+              <p>Check your internet connection and clear cookies/browser cache if encountering a 400 error.</p>
+              <p class="lead">When I search for genre, nothing appears?</p>
+              <p>Make sure you are using a genre that the API can recognize, here is a list of valid genres below. Keep in mind that most games fit into more than one of these categories..</p>
+              <ul>
+                <li>Simulator</li>
+                <li>Quiz/Trivia</li>
+                <li>Fighting</li>
+                <li>Strategy</li>
+                <li>Adventure</li>
+                <li>Role-Playing (RPG)</li>
+                <li>Shooter</li>
+                <li>Music</li>
+                <li>Indie</li>
+                <li>Turn-based strategy (TBS)</li>
+                <li>Pinball</li>
+                <li>Platform</li>
+                <li>Racing</li>
+                <li>Sport</li>
+                <li>Arcade</li>
+                <li>Visual Novel</li>
+                <li>Hack and slash/Beat 'em up</li>
+                <li>Point-and-click</li>
+              </ul>
+              <p class="lead">What are all these NaN tags on the games?!</p>
+              <p>The VGDB API was used as a source for the total review rating for each game, and many games have not been rated by the VGDB community. NaN represents these games.</p>
+              <p class="lead">What is the best video game of all time?</p>
+              <p>Super Mario World for the SNES.</p>
+              <button class="close-button" data-close aria-label="Close modal" type="button">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
       </div>
     </section>
     <br>
