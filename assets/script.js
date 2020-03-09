@@ -5,7 +5,7 @@ $("#byConsole").hide(100);
 $("#bottomBox").hide(100);
 
 
-$(".gif").on("click", function() {
+$(".gif").on("click touchstart", function() {
 
   $(".splash").hide(100);
   $(".inputcontent").show(100);
@@ -18,7 +18,7 @@ $(".gif").on("click", function() {
 
 // GENESIS BUTTON API PULL AND DOM CREATION
 
-$("#genButton").on("click", function() {
+$("#genButton").on("click touchstart", function() {
 
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -126,7 +126,7 @@ $("#genButton").on("click", function() {
 
 // N64 BUTTON API PULL AND DOM CREATION
 
-$("#n64Button").on("click", function() {
+$("#n64Button").on("click touchstart", function() {
 
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -235,7 +235,7 @@ $("#n64Button").on("click", function() {
 
 // XBOX BUTTON API PULL AND DOM CREATION
 
-$("#xButton").on("click", function() {
+$("#xButton").on("click touchstart", function() {
 
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -344,7 +344,7 @@ $("#xButton").on("click", function() {
 
 // PS1 BUTTON API PULL AND DOM CREATION
 
-$("#ps1Button").on("click", function() {
+$("#ps1Button").on("click touchstart", function() {
 
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -452,8 +452,7 @@ $("#ps1Button").on("click", function() {
 
 // SNES BUTTON API PULL AND DOM CREATION
 
-$("#snesButton").on("click", function() {
-
+$("#snesButton").on("click touchstart", function() {
 
     var queryURL = "https://api-v3.igdb.com/games";
 
@@ -561,7 +560,7 @@ $("#snesButton").on("click", function() {
 
 // ATARI BUTTON API PULL AND DOM CREATION
 
-$("#atariButton").on("click", function() {
+$("#atariButton").on("click touchstart", function() {
 
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -670,7 +669,7 @@ $("#atariButton").on("click", function() {
 
 // GAMECUBE BUTTON API PULL AND DOM CREATION
 
-$("#gcButton").on("click", function() {
+$("#gcButton").on("click touchstart", function() {
 
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -779,7 +778,7 @@ $("#gcButton").on("click", function() {
 
 // SNES BUTTON API PULL AND DOM CREATION
 
-$("#snesButton").on("click", function() {
+$("#snesButton").on("click touchstart", function() {
 
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -888,7 +887,7 @@ $("#snesButton").on("click", function() {
 
 // DREAMCAST BUTTON API PULL AND DOM CREATION
 
-$("#dreamButton").on("click", function() {
+$("#dreamButton").on("click touchstart", function() {
 
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -997,7 +996,7 @@ $("#dreamButton").on("click", function() {
 
 // GAMEBOY BUTTON API PULL AND DOM CREATION
 
-$("#gboyButton").on("click", function() {
+$("#gboyButton").on("click touchstart", function() {
 
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -1106,7 +1105,7 @@ $("#gboyButton").on("click", function() {
 
 // NES BUTTON API PULL AND DOM CREATION
 
-$("#nesButton").on("click", function() {
+$("#nesButton").on("click touchstart", function() {
 
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -1215,7 +1214,7 @@ $("#nesButton").on("click", function() {
 
 // SEARCH INPUT API PULL AND DOM CREATION FOR TITLE
 
-$("#sTitleButton").on("click", function() {
+$("#sTitleButton").on("click touchstart", function() {
 
     var nameinput = String($('#nameInput').val());
     var queryURL = "http://www.gamespot.com/api/games/?api_key=0e27e3e25c2d1e2fdf52fae8191317b1730d9589&format=json&filter=name:" + nameinput;
@@ -1302,7 +1301,7 @@ $("#sTitleButton").on("click", function() {
 
 // SEARCH INPUT API PULL AND DOM CREATION FOR GENRE
 
-$("#sGPbutton").on("click", function() {
+$("#sGPbutton").on("click touchstart", function() {
 
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -1462,7 +1461,7 @@ $("#sGPbutton").on("click", function() {
 
 var tBody = $('tbody');
 
-$('#oneupBlock').on('click', function(){
+$('#oneupBlock').on('click touchstart', function(){
     tBody.empty();
     counter = parseInt(localStorage.getItem('counter')) + 1;
     // Generating Loop
