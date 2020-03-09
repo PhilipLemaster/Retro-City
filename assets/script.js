@@ -2,7 +2,7 @@
 
 $("#nonsplashContent").hide(100);
 $('#bottomBox').hide(100);
-$(".greeting").on("click touchstart", function() {
+$(".greeting").on("click tap", function() {
 
   $(".splash").hide(100);
   $('#bottomBox').show(100);
@@ -13,7 +13,7 @@ $(".greeting").on("click touchstart", function() {
 
 // GENESIS BUTTON API PULL AND DOM CREATION
 
-$("#genButton").on("click touchstart", function() {
+$("#genButton").on("click tap", function() {
 
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -101,13 +101,13 @@ $("#genButton").on("click touchstart", function() {
             }
             
 
-            mcBut.click(function(){
+            mcBut.on('click tap', (function(){
                 console.log('sup');
                 $(this).nextAll().toggle();
             })
 
             
-          }
+            )}
       });
 
       
@@ -121,7 +121,7 @@ $("#genButton").on("click touchstart", function() {
 
 // N64 BUTTON API PULL AND DOM CREATION
 
-$("#n64Button").on("click touchstart", function() {
+$("#n64Button").on("click tap", function() {
 
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -210,13 +210,13 @@ $("#n64Button").on("click touchstart", function() {
             }
             
 
-            mcBut.click(function(){
-                console.log('sup');
-                $(this).nextAll().toggle();
-            })
+            mcBut.on('click tap', (function(){
+              console.log('sup');
+              $(this).nextAll().toggle();
+              })
 
-            
-          }
+          
+          )}
       });
 
       
@@ -230,7 +230,7 @@ $("#n64Button").on("click touchstart", function() {
 
 // XBOX BUTTON API PULL AND DOM CREATION
 
-$("#xButton").on("click touchstart", function() {
+$("#xButton").on("click tap", function() {
 
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -319,13 +319,13 @@ $("#xButton").on("click touchstart", function() {
             }
             
 
-            mcBut.click(function(){
-                console.log('sup');
-                $(this).nextAll().toggle();
-            })
+            mcBut.on('click tap', (function(){
+              console.log('sup');
+              $(this).nextAll().toggle();
+              })
 
-            
-          }
+          
+          )}
       });
 
       
@@ -339,7 +339,7 @@ $("#xButton").on("click touchstart", function() {
 
 // PS1 BUTTON API PULL AND DOM CREATION
 
-$("#ps1Button").on("click touchstart", function() {
+$("#ps1Button").on("click tap", function() {
 
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -427,13 +427,13 @@ $("#ps1Button").on("click touchstart", function() {
             }
             
 
-            mcBut.click(function(){
-                console.log('sup');
-                $(this).nextAll().toggle();
-            })
+            mcBut.on('click tap', (function(){
+              console.log('sup');
+              $(this).nextAll().toggle();
+              })
 
-            
-          }
+          
+          )}
       });
 
       
@@ -447,7 +447,7 @@ $("#ps1Button").on("click touchstart", function() {
 
 // SNES BUTTON API PULL AND DOM CREATION
 
-$("#snesButton").on("click touchstart", function() {
+$("#snesButton").on("click tap", function() {
 
     var queryURL = "https://api-v3.igdb.com/games";
 
@@ -535,13 +535,13 @@ $("#snesButton").on("click touchstart", function() {
             }
             
 
-            mcBut.click(function(){
-                console.log('sup');
-                $(this).nextAll().toggle();
-            })
+            mcBut.on('click tap', (function(){
+              console.log('sup');
+              $(this).nextAll().toggle();
+              })
 
-            
-          }
+          
+          )}
       });
 
       
@@ -555,7 +555,7 @@ $("#snesButton").on("click touchstart", function() {
 
 // ATARI BUTTON API PULL AND DOM CREATION
 
-$("#atariButton").on("click touchstart", function() {
+$("#atariButton").on("click tap", function() {
 
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -644,13 +644,13 @@ $("#atariButton").on("click touchstart", function() {
             }
             
 
-            mcBut.click(function(){
-                console.log('sup');
-                $(this).nextAll().toggle();
-            })
+            mcBut.on('click tap', (function(){
+              console.log('sup');
+              $(this).nextAll().toggle();
+              })
 
-            
-          }
+          
+          )}
       });
 
       
@@ -664,7 +664,7 @@ $("#atariButton").on("click touchstart", function() {
 
 // GAMECUBE BUTTON API PULL AND DOM CREATION
 
-$("#gcButton").on("click touchstart", function() {
+$("#gcButton").on("click tap", function() {
 
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -753,13 +753,13 @@ $("#gcButton").on("click touchstart", function() {
             }
             
 
-            mcBut.click(function(){
-                console.log('sup');
-                $(this).nextAll().toggle();
-            })
+            mcBut.on('click tap', (function(){
+              console.log('sup');
+              $(this).nextAll().toggle();
+              })
 
-            
-          }
+          
+          )}
       });
 
       
@@ -773,7 +773,7 @@ $("#gcButton").on("click touchstart", function() {
 
 // SNES BUTTON API PULL AND DOM CREATION
 
-$("#snesButton").on("click touchstart", function() {
+$("#snesButton").on("click tap", function() {
 
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -862,13 +862,13 @@ $("#snesButton").on("click touchstart", function() {
             }
             
 
-            mcBut.click(function(){
-                console.log('sup');
-                $(this).nextAll().toggle();
-            })
+            mcBut.on('click tap', (function(){
+              console.log('sup');
+              $(this).nextAll().toggle();
+              })
 
-            
-          }
+          
+          )}
       });
 
       
@@ -882,7 +882,7 @@ $("#snesButton").on("click touchstart", function() {
 
 // DREAMCAST BUTTON API PULL AND DOM CREATION
 
-$("#dreamButton").on("click touchstart", function() {
+$("#dreamButton").on("click tap", function() {
 
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -971,13 +971,13 @@ $("#dreamButton").on("click touchstart", function() {
             }
             
 
-            mcBut.click(function(){
-                console.log('sup');
-                $(this).nextAll().toggle();
-            })
+            mcBut.on('click tap', (function(){
+              console.log('sup');
+              $(this).nextAll().toggle();
+              })
 
-            
-          }
+          
+          )}
       });
 
       
@@ -991,7 +991,7 @@ $("#dreamButton").on("click touchstart", function() {
 
 // GAMEBOY BUTTON API PULL AND DOM CREATION
 
-$("#gboyButton").on("click touchstart", function() {
+$("#gboyButton").on("click tap", function() {
 
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -1080,13 +1080,13 @@ $("#gboyButton").on("click touchstart", function() {
             }
             
 
-            mcBut.click(function(){
-                console.log('sup');
-                $(this).nextAll().toggle();
-            })
+            mcBut.on('click tap', (function(){
+              console.log('sup');
+              $(this).nextAll().toggle();
+              })
 
-            
-          }
+          
+          )}
       });
 
       
@@ -1100,7 +1100,7 @@ $("#gboyButton").on("click touchstart", function() {
 
 // NES BUTTON API PULL AND DOM CREATION
 
-$("#nesButton").on("click touchstart", function() {
+$("#nesButton").on("click tap", function() {
 
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -1189,13 +1189,13 @@ $("#nesButton").on("click touchstart", function() {
             }
             
 
-            mcBut.click(function(){
-                console.log('sup');
-                $(this).nextAll().toggle();
-            })
+            mcBut.on('click tap', (function(){
+              console.log('sup');
+              $(this).nextAll().toggle();
+              })
 
-            
-          }
+          
+          )}
       });
 
       
@@ -1209,7 +1209,7 @@ $("#nesButton").on("click touchstart", function() {
 
 // SEARCH INPUT API PULL AND DOM CREATION FOR TITLE
 
-$("#sTitleButton").on("click touchstart", function() {
+$("#sTitleButton").on("click tap", function() {
 
     var nameinput = String($('#nameInput').val().substr(0,1).toUpperCase() + String($('#nameInput').val().substr(1).toLowerCase()));
     var queryURL = "http://www.gamespot.com/api/games/?api_key=0e27e3e25c2d1e2fdf52fae8191317b1730d9589&format=json&filter=name:" + nameinput;
@@ -1252,10 +1252,13 @@ $("#sTitleButton").on("click touchstart", function() {
             $(mcBut).addClass('clear button warning').attr('data-open', 'moreContent');
             mcBut.appendTo(tRow);
 
-            mcBut.click(function(){
-                console.log('sup');
-                $(this).nextAll().toggle();
-            })
+            mcBut.on('click tap', (function(){
+              console.log('sup');
+              $(this).nextAll().toggle();
+              })
+
+          
+          )
 
             // mcBox with contents from API
             
@@ -1278,7 +1281,7 @@ $("#sTitleButton").on("click touchstart", function() {
 
             var saveButton = $('<button>Save</button>');
             saveButton.addClass('clear button alert').appendTo(mcBox);
-            saveButton.click(function(){
+            saveButton.on('click tap', (function(){
                 var thisTitle = $(this).siblings('h3').text()
                 var counter = localStorage.getItem('counter');
                 counter++;
@@ -1291,7 +1294,7 @@ $("#sTitleButton").on("click touchstart", function() {
                 imgCounter++;
                 localStorage.setItem('favoriteGamesImg:'+ imgCounter, thisImage);
                 localStorage.setItem('imgCounter', imgCounter);
-            });
+            }));
 
         }
       })
@@ -1299,7 +1302,7 @@ $("#sTitleButton").on("click touchstart", function() {
 
 // SEARCH INPUT API PULL AND DOM CREATION FOR GENRE
 
-$("#sGPbutton").on("click touchstart", function() {
+$("#sGPbutton").on("click tap", function() {
 
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -1421,14 +1424,17 @@ $("#sGPbutton").on("click touchstart", function() {
             }
             
 
-            mcBut.click(function(){
-                console.log('sup');
-                $(this).nextAll().toggle();
-            })
+            mcBut.on('click tap', (function(){
+              console.log('sup');
+              $(this).nextAll().toggle();
+              })
+
+          
+          )
 
             var saveButton = $('<button>Save</button>');
             saveButton.addClass('clear button alert').appendTo(mcBox);
-            saveButton.click(function(){
+            saveButton.on('click tap', (function(){
                 var thisTitle = $(this).siblings('h3').text()
                 var counter = localStorage.getItem('counter');
                 counter++;
@@ -1441,7 +1447,7 @@ $("#sGPbutton").on("click touchstart", function() {
                 imgCounter++;
                 localStorage.setItem('favoriteGamesImg:'+ imgCounter, thisImage);
                 localStorage.setItem('imgCounter', imgCounter);
-            });
+            }));
             
           }
       });
@@ -1459,7 +1465,7 @@ $("#sGPbutton").on("click touchstart", function() {
 
 var tBody = $('tbody');
 
-$('#oneupBlock').on('click touchstart', function(){
+$('#oneupBlock').on('click tap', function(){
     tBody.empty();
     counter = parseInt(localStorage.getItem('counter')) + 1;
     // Generating Loop
@@ -1480,7 +1486,7 @@ $('#oneupBlock').on('click touchstart', function(){
     var clearShroom = $('<img>').attr('src', 'https://lh3.googleusercontent.com/proxy/lHhS-AWWbQvjeysVqAxSNLjUZrHTosOjwW5B8u7b1hfrO4PJFh4xHnA7nEpNwcGONQGGZYRXb-rthzjZVkYkjsrAsVP6y4FC');
     clearShroom.addClass('shroom');
     clearShroom.appendTo(body);
-    clearShroom.on('click touchstart', function(){
+    clearShroom.on('click tap', function(){
       localStorage.clear();
       $(this).animate({
         width: 'toggle',
