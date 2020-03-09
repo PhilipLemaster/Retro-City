@@ -1292,7 +1292,7 @@ $("#sTitleButton").on("click", function() {
                 console.log(thisImage);
                 var imgCounter = localStorage.getItem('imgCounter');
                 imgCounter++;
-                localStorage.setItem('favoriteGames:'+ imgCounter, thisImage);
+                localStorage.setItem('favoriteGamesImg:'+ imgCounter, thisImage);
                 localStorage.setItem('imgCounter', imgCounter);
             });
 
@@ -1442,7 +1442,7 @@ $("#sGPbutton").on("click", function() {
                 console.log(thisImage);
                 var imgCounter = localStorage.getItem('imgCounter');
                 imgCounter++;
-                localStorage.setItem('favoriteGames:'+ imgCounter, thisImage);
+                localStorage.setItem('favoriteGamesImg:'+ imgCounter, thisImage);
                 localStorage.setItem('imgCounter', imgCounter);
             });
             
@@ -1458,3 +1458,26 @@ $("#sGPbutton").on("click", function() {
     }
 });
 
+// GENERATE FAVORITES LIST FROM LOCAL STORAGE
+
+var tBody = $('tbody');
+
+$('#oneupBlock').on('click', function(){
+    tBody.empty();
+    counter = parseInt(localStorage.getItem('counter')) + 1;
+    // Generating Loop
+    for (y = 1; y < counter; y++) {
+        // Game Titles
+        var favTitle = $('<th>').text(localStorage.getItem('favoriteGames:'+ y));
+        var tRow = $('<tr>');
+        favTitle.appendTo(tRow);
+        
+
+        // Game Images
+        var favImageSource = String(localStorage.getItem('favoriteGamesImg:'+ y));
+        var favImage = $('<img>').attr('src', favImageSource)
+        favImage.appendTo(tRow);
+        tRow.appendTo(tBody);
+    }
+        
+})
