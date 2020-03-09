@@ -67,6 +67,76 @@ h3 {
     margin: 5px;
 } 
 
+.n64icon{
+    height: 20px;
+    width: 20px;
+    margin-left: 8px;
+    
+}
+
+.genesisicon{
+    height: 20px;
+    width: 20px;
+    margin-left: 8px;
+    
+}
+
+.xboxicon{
+    margin-left: 8px;
+    height: 20px;
+    width: 20px;
+    
+}
+
+.snesicon{
+    height: 20px;
+    width: 20px;
+    margin-left: 8px;
+    
+}
+
+.ps1icon{
+    height: 20px;
+    width: 20px;
+    margin-left: 8px;
+    
+}
+
+.nesicon{
+    height: 20px;
+    width: 20px;
+    margin-left: 8px;
+    
+}
+
+.dreamcasticon{
+    height: 20px;
+    width: 20px;
+    margin-left: 8px;
+    
+}
+
+.atariicon{
+    height: 20px;
+    width: 20px;
+    margin-left: 8px;
+    
+}
+
+.gamecubeicon{
+    height: 20px;
+    width: 20px;
+    margin-left: 8px;
+    
+}
+
+.gameboyicon{
+    height: 20px;
+    width: 20px;
+    margin-left: 8px;
+    
+}
+
 #inputField {
     font-family: 'Oxanium' ;
 }
@@ -179,6 +249,86 @@ button {
 #faqBlock:hover, #oneupBlock:hover {
     height: 50px;
     width: 50px;
+}
+
+.n64icon{
+    height: 20px;
+    width: 20px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    
+}
+
+.genesisicon{
+    height: 20px;
+    width: 20px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    
+}
+
+.xboxicon{
+    height: 20px;
+    width: 20px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    
+}
+
+.snesicon{
+    height: 20px;
+    width: 20px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    
+}
+
+.ps1icon{
+    height: 20px;
+    width: 20px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    
+}
+
+.nesicon{
+    height: 20px;
+    width: 20px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    
+}
+
+.dreamcasticon{
+    height: 20px;
+    width: 20px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    
+}
+
+.atariicon{
+    height: 20px;
+    width: 20px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    
+}
+
+.gamecubeicon{
+    height: 20px;
+    width: 20px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    
+}
+
+.gameboyicon{
+    height: 20px;
+    width: 20px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    
 }
 
 }
