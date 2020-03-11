@@ -1,10 +1,10 @@
-$(document).ready(function(){
+$(document).ready(function(event){
 
 // SPLASH PAGE HIDE/SHOW CONTENT
 $("#nonsplashContent").hide(100);
 $('#bottomBox').hide(100);
-$(".greeting").on("click  ", function() {
-
+$(".greeting").on("click  ", function(event) {
+  event.preventDefault();
   $(".splash").hide(100);
   $('#bottomBox').show(100);
   $("#nonsplashContent").show(100);
@@ -14,8 +14,8 @@ $(".greeting").on("click  ", function() {
 
 // GENESIS BUTTON API PULL AND DOM CREATION
 
-$("#genButton").on("click  ", function() {
-
+$("#genButton").on("click  ", function(event) {
+    event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
 
@@ -102,7 +102,7 @@ $("#genButton").on("click  ", function() {
             }
             
 
-            mcBut.on('click', (function(){
+            mcBut.on('click', (function(event){
                 console.log('sup');
                 $(this).nextAll().toggle();
             })
@@ -122,8 +122,8 @@ $("#genButton").on("click  ", function() {
 
 // N64 BUTTON API PULL AND DOM CREATION
 
-$("#n64Button").on("click  ", function() {
-
+$("#n64Button").on("click  ", function(event) {
+  event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
 
@@ -211,7 +211,7 @@ $("#n64Button").on("click  ", function() {
             }
             
 
-            mcBut.on('click', (function(){
+            mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
               })
@@ -231,8 +231,8 @@ $("#n64Button").on("click  ", function() {
 
 // XBOX BUTTON API PULL AND DOM CREATION
 
-$("#xButton").on("click  ", function() {
-
+$("#xButton").on("click  ", function(event) {
+  event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
 
@@ -320,7 +320,7 @@ $("#xButton").on("click  ", function() {
             }
             
 
-            mcBut.on('click', (function(){
+            mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
               })
@@ -340,8 +340,8 @@ $("#xButton").on("click  ", function() {
 
 // PS1 BUTTON API PULL AND DOM CREATION
 
-$("#ps1Button").on("click  ", function() {
-
+$("#ps1Button").on("click  ", function(event) {
+  event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
 
@@ -428,7 +428,7 @@ $("#ps1Button").on("click  ", function() {
             }
             
 
-            mcBut.on('click', (function(){
+            mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
               })
@@ -448,8 +448,8 @@ $("#ps1Button").on("click  ", function() {
 
 // SNES BUTTON API PULL AND DOM CREATION
 
-$("#snesButton").on("click  ", function() {
-
+$("#snesButton").on("click  ", function(event) {
+  event.preventDefault();
     var queryURL = "https://api-v3.igdb.com/games";
 
     $.ajax({
@@ -536,7 +536,7 @@ $("#snesButton").on("click  ", function() {
             }
             
 
-            mcBut.on('click', (function(){
+            mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
               })
@@ -556,8 +556,8 @@ $("#snesButton").on("click  ", function() {
 
 // ATARI BUTTON API PULL AND DOM CREATION
 
-$("#atariButton").on("click  ", function() {
-
+$("#atariButton").on("click  ", function(event) {
+  event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
 
@@ -645,7 +645,7 @@ $("#atariButton").on("click  ", function() {
             }
             
 
-            mcBut.on('click', (function(){
+            mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
               })
@@ -665,8 +665,8 @@ $("#atariButton").on("click  ", function() {
 
 // GAMECUBE BUTTON API PULL AND DOM CREATION
 
-$("#gcButton").on("click  ", function() {
-
+$("#gcButton").on("click  ", function(event) {
+  event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
 
@@ -754,7 +754,7 @@ $("#gcButton").on("click  ", function() {
             }
             
 
-            mcBut.on('click', (function(){
+            mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
               })
@@ -774,8 +774,8 @@ $("#gcButton").on("click  ", function() {
 
 // DREAMCAST BUTTON API PULL AND DOM CREATION
 
-$("#dreamButton").on("click  ", function() {
-
+$("#dreamButton").on("click  ", function(event) {
+  event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
 
@@ -863,7 +863,7 @@ $("#dreamButton").on("click  ", function() {
             }
             
 
-            mcBut.on('click', (function(){
+            mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
               })
@@ -883,8 +883,8 @@ $("#dreamButton").on("click  ", function() {
 
 // GAMEBOY BUTTON API PULL AND DOM CREATION
 
-$("#gboyButton").on("click  ", function() {
-
+$("#gboyButton").on("click  ", function(event) {
+  event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
 
@@ -972,7 +972,7 @@ $("#gboyButton").on("click  ", function() {
             }
             
 
-            mcBut.on('click', (function(){
+            mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
               })
@@ -992,8 +992,8 @@ $("#gboyButton").on("click  ", function() {
 
 // NES BUTTON API PULL AND DOM CREATION
 
-$("#nesButton").on("click  ", function() {
-
+$("#nesButton").on("click  ", function(event) {
+  event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
 
@@ -1081,7 +1081,7 @@ $("#nesButton").on("click  ", function() {
             }
             
 
-            mcBut.on('click', (function(){
+            mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
               })
@@ -1101,8 +1101,8 @@ $("#nesButton").on("click  ", function() {
 
 // SEARCH INPUT API PULL AND DOM CREATION FOR TITLE
 
-$("#sTitleButton").on("click  ", function() {
-
+$("#sTitleButton").on("click  ", function(event) {
+  event.preventDefault();
     var nameinput = String($('#nameInput').val().substr(0,1).toUpperCase() + String($('#nameInput').val().substr(1).toLowerCase()));
     var queryURL = "http://www.gamespot.com/api/games/?api_key=0e27e3e25c2d1e2fdf52fae8191317b1730d9589&format=json&filter=name:" + nameinput;
     
@@ -1144,7 +1144,7 @@ $("#sTitleButton").on("click  ", function() {
             $(mcBut).addClass('clear button warning').attr('data-open', 'moreContent');
             mcBut.appendTo(tRow);
 
-            mcBut.on('click', (function(){
+            mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
               })
@@ -1173,7 +1173,7 @@ $("#sTitleButton").on("click  ", function() {
 
             var saveButton = $('<button>Save</button>');
             saveButton.addClass('clear button alert').appendTo(mcBox);
-            saveButton.on('click', (function(){
+            saveButton.on('click', (function(event){
                 var thisTitle = $(this).siblings('h3').text()
                 var counter = localStorage.getItem('counter');
                 counter++;
@@ -1194,8 +1194,8 @@ $("#sTitleButton").on("click  ", function() {
 
 // SEARCH INPUT API PULL AND DOM CREATION FOR GENRE
 
-$("#sGPbutton").on("click  ", function() {
-
+$("#sGPbutton").on("click  ", function(event) {
+  event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
     
@@ -1316,7 +1316,7 @@ $("#sGPbutton").on("click  ", function() {
             }
             
 
-            mcBut.on('click', (function(){
+            mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
               })
@@ -1326,7 +1326,7 @@ $("#sGPbutton").on("click  ", function() {
 
             var saveButton = $('<button>Save</button>');
             saveButton.addClass('clear button alert').appendTo(mcBox);
-            saveButton.on('click', (function(){
+            saveButton.on('click', (function(event){
                 var thisTitle = $(this).siblings('h3').text()
                 var counter = localStorage.getItem('counter');
                 counter++;
@@ -1357,7 +1357,8 @@ $("#sGPbutton").on("click  ", function() {
 
 var tBody = $('tbody');
 
-$('#oneupBlock').on('click', function(){
+$('#oneupBlock').on('click', function(event){
+  event.preventDefault();
     tBody.empty();
     counter = parseInt(localStorage.getItem('counter')) + 1;
     // Generating Loop
@@ -1379,12 +1380,13 @@ $('#oneupBlock').on('click', function(){
 
 
 var clearShroom = $('#poison');
-    clearShroom.on('click', function(){
+    clearShroom.on('click', function(event){
+      event.preventDefault();
       localStorage.clear();
       $(this).animate({
         width: 'toggle',
         height: "toggle"
-      }, 5000, function() {
+      }, 5000, function(event) {
       })
   });
 });
