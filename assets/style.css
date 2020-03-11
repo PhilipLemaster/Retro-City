@@ -7,7 +7,7 @@ button:hover, a:hover, #clickme:hover, #splash:hover, .shroom {
     cursor: url('Mario\ Point\ Link.png'), url('Mario\ Point\ Link.cur'), auto;
 }   
 
-.greeting, #genButton, #n64Button, #xButton, #ps1Button, #snesButton, #atariButton, #dreamButton, #gboyButton, #nesButton, #sTitleButton, #sGPbutton, #oneupBlock {
+.greeting, #genButton, #n64Button, #xButton, #ps1Button, #snesButton, #atariButton, #dreamButton, #gboyButton, #nesButton, #gcButton, #sTitleButton, #sGPbutton, #oneupBlock {
     cursor: pointer;
 }
 
