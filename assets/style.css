@@ -7,6 +7,10 @@ button:hover, a:hover, #clickme:hover, #splash:hover, .shroom {
     cursor: url('Mario\ Point\ Link.png'), url('Mario\ Point\ Link.cur'), auto;
 }   
 
+.greeting, #genButton, #n64Button, #xButton, #ps1Button, #snesButton, #atariButton, #dreamButton, #gboyButton, #nesButton, #sTitleButton, #sGPbutton, #oneupBlock {
+    cursor: pointer;
+}
+
 body {
     background-image: url(full\ BG.jpg);
     background-repeat: repeat-y;
@@ -70,7 +74,6 @@ h3 {
     font-weight: bold;
     padding: auto;
     margin: 5px;
-    cursor: pointer;
 } 
 
 .n64icon{
