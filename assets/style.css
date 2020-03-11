@@ -3,6 +3,10 @@
     cursor: url("Mario\ Point.png"), url("Mario\ Point.cur"), default;
 }  
 
+button {
+    touch-action: none;
+  }
+  
 body {
     background-image: url(full\ BG.jpg);
     background-repeat: repeat-y;
