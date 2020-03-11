@@ -13,8 +13,7 @@ $(".greeting").on("click  ", function(event) {
 });
 
 // GENESIS BUTTON API PULL AND DOM CREATION
-
-$("#genButton").on("click  ", function(event) {
+$(document).on('click', '#genButton',function(event) {
     event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -122,7 +121,7 @@ $("#genButton").on("click  ", function(event) {
 
 // N64 BUTTON API PULL AND DOM CREATION
 
-$("#n64Button").on("click  ", function(event) {
+$(document).on('click', '#n64Button',function(event) {
   event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -231,7 +230,7 @@ $("#n64Button").on("click  ", function(event) {
 
 // XBOX BUTTON API PULL AND DOM CREATION
 
-$("#xButton").on("click  ", function(event) {
+$(document).on('click', '#xButton',function(event) {
   event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -340,7 +339,7 @@ $("#xButton").on("click  ", function(event) {
 
 // PS1 BUTTON API PULL AND DOM CREATION
 
-$("#ps1Button").on("click  ", function(event) {
+$(document).on('click', '#ps1Button',function(event) {
   event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -448,7 +447,7 @@ $("#ps1Button").on("click  ", function(event) {
 
 // SNES BUTTON API PULL AND DOM CREATION
 
-$("#snesButton").on("click  ", function(event) {
+$(document).on('click', '#snesButton',function(event) {
   event.preventDefault();
     var queryURL = "https://api-v3.igdb.com/games";
 
@@ -556,7 +555,7 @@ $("#snesButton").on("click  ", function(event) {
 
 // ATARI BUTTON API PULL AND DOM CREATION
 
-$("#atariButton").on("click  ", function(event) {
+$(document).on('click', '#atariButton',function(event) {
   event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -665,7 +664,7 @@ $("#atariButton").on("click  ", function(event) {
 
 // GAMECUBE BUTTON API PULL AND DOM CREATION
 
-$("#gcButton").on("click  ", function(event) {
+$(document).on('click', '#gcButton',function(event) {
   event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -774,7 +773,7 @@ $("#gcButton").on("click  ", function(event) {
 
 // DREAMCAST BUTTON API PULL AND DOM CREATION
 
-$("#dreamButton").on("click  ", function(event) {
+$(document).on('click', '#dreamButton',function(event) {
   event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -883,7 +882,7 @@ $("#dreamButton").on("click  ", function(event) {
 
 // GAMEBOY BUTTON API PULL AND DOM CREATION
 
-$("#gboyButton").on("click  ", function(event) {
+$(document).on('click', '#gboyButton',function(event) {
   event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -992,7 +991,7 @@ $("#gboyButton").on("click  ", function(event) {
 
 // NES BUTTON API PULL AND DOM CREATION
 
-$("#nesButton").on("click  ", function(event) {
+$(document).on('click', '#nesButton',function(event) {
   event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -1101,7 +1100,7 @@ $("#nesButton").on("click  ", function(event) {
 
 // SEARCH INPUT API PULL AND DOM CREATION FOR TITLE
 
-$("#sTitleButton").on("click  ", function(event) {
+$(document).on('click', '#sTitleButton',function(event) {
   event.preventDefault();
     var nameinput = String($('#nameInput').val().substr(0,1).toUpperCase() + String($('#nameInput').val().substr(1).toLowerCase()));
     var queryURL = "http://www.gamespot.com/api/games/?api_key=0e27e3e25c2d1e2fdf52fae8191317b1730d9589&format=json&filter=name:" + nameinput;
@@ -1194,7 +1193,7 @@ $("#sTitleButton").on("click  ", function(event) {
 
 // SEARCH INPUT API PULL AND DOM CREATION FOR GENRE
 
-$("#sGPbutton").on("click  ", function(event) {
+$(document).on('click', '#sGPbutton',function(event) {
   event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -1357,7 +1356,7 @@ $("#sGPbutton").on("click  ", function(event) {
 
 var tBody = $('tbody');
 
-$('#oneupBlock').on('click', function(event){
+$(document).on('click', '#oneupBlock',function(event) {
   event.preventDefault();
     tBody.empty();
     counter = parseInt(localStorage.getItem('counter')) + 1;
@@ -1380,7 +1379,7 @@ $('#oneupBlock').on('click', function(event){
 
 
 var clearShroom = $('#poison');
-    clearShroom.on('click', function(event){
+$(document).on('click', '#poison',function(event) {
       event.preventDefault();
       localStorage.clear();
       $(this).animate({

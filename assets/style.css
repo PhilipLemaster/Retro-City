@@ -266,6 +266,10 @@ button:hover, a:hover, #clickme:hover, #splash:hover, .shroom {
     text-align: center;
 }
 
+body {
+    cursor: pointer;
+}
+
 .greeting, #genButton, #n64Button, #xButton, #ps1Button, #snesButton, #atariButton, #dreamButton, #gboyButton, #nesButton, #gcButton, #sTitleButton, #sGPbutton, #oneupBlock {
     cursor: pointer;
 }
