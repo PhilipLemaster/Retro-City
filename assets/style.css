@@ -1,11 +1,7 @@
 * {
     overflow-x: hidden;
     cursor: url("Mario\ Point.png"), url("Mario\ Point.cur"), default;
-}
-
-button:hover, a:hover, #clickme:hover, #splash:hover, .shroom {
-    cursor: url('Mario\ Point\ Link.png'), url('Mario\ Point\ Link.cur'), auto;
-}   
+}  
 
 .greeting, #genButton, #n64Button, #xButton, #ps1Button, #snesButton, #atariButton, #dreamButton, #gboyButton, #nesButton, #gcButton, #sTitleButton, #sGPbutton, #oneupBlock {
     cursor: pointer;
@@ -154,7 +150,6 @@ h3 {
     font-size: 100px;
     text-align: center;
     color: white;
-    cursor: pointer;
     position: relative;
     top: -60px;
 }
@@ -207,6 +202,10 @@ th {
 
 @media only screen and (min-width: 750px) {
 
+button:hover, a:hover, #clickme:hover, #splash:hover, .shroom {
+        cursor: url('Mario\ Point\ Link.png'), url('Mario\ Point\ Link.cur'), auto;
+} 
+
 #divsplash {
     background-image: url(splashBG.jpg);
     background-size: contain;
@@ -222,7 +221,9 @@ th {
     cursor: pointer;
 }    
 
-
+#clickme {
+    cursor: pointer;
+}
 
 #faqBlock, #oneupBlock, #poison {
     height: 75px;
@@ -322,11 +323,6 @@ button {
     display: inline-block;
     margin-inline-start: 30px;
     margin-inline-end: 30px;
-}
-
-#faqBlock:hover, #oneupBlock:hover, #poison:hover {
-    height: 50px;
-    width: 50px;
 }
 
 .n64icon{
