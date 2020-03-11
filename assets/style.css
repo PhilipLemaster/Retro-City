@@ -1,0 +1,408 @@
+* {
+    overflow-x: hidden;
+    cursor: url("Mario\ Point.png"), url("Mario\ Point.cur"), default;
+}
+
+button:hover, a:hover, #clickme:hover, #splash:hover, .shroom {
+    cursor: url('Mario\ Point\ Link.png'), url('Mario\ Point\ Link.cur'), auto;
+}   
+
+body {
+    background-image: url(full\ BG.jpg);
+    background-repeat: repeat-y;
+    background-size: auto;
+    background-color: rgba(255, 255, 255, 0.4);
+    background-blend-mode: lighten;
+}
+
+h1 {
+    font-size: 67px;
+    font-family: 'Press Start 2P';
+    text-align: center;
+}
+
+#building {
+    height: 67px; 
+    position: relative;
+    bottom: 12px;
+}
+
+#r1 {
+    color: #63616e
+}
+ 
+#e {
+    color: #069330;
+}
+
+#t {
+    color: #ffc001;
+}
+
+#r2 {
+    color: #011da9;
+}
+
+#o {
+    color: #c20d02;
+}
+
+h2, h3, h4 {
+    font-family: 'VT323';
+    text-align: center;
+}
+
+h2 {
+    font-size: 50px;
+}
+
+h3 {
+    font-size: 42px;
+}
+
+#ainfobut {
+    margin-inline-start: 45%;
+    margin-inline-end: 45%;
+}
+
+.button {
+    font-family: 'Oxanium' ;
+    font-weight: bold;
+    padding: auto;
+    margin: 5px;
+} 
+
+.n64icon{
+    height: 20px;
+    width: 20px;
+    margin-left: 8px;
+    
+}
+
+.genesisicon{
+    height: 20px;
+    width: 20px;
+    margin-left: 8px;
+    
+}
+
+.xboxicon{
+    margin-left: 8px;
+    height: 20px;
+    width: 20px;
+    
+}
+
+.snesicon{
+    height: 20px;
+    width: 20px;
+    margin-left: 8px;
+    
+}
+
+.ps1icon{
+    height: 20px;
+    width: 20px;
+    margin-left: 8px;
+    
+}
+
+.nesicon{
+    height: 20px;
+    width: 20px;
+    margin-left: 8px;
+    
+}
+
+.dreamcasticon{
+    height: 20px;
+    width: 20px;
+    margin-left: 8px;
+    
+}
+
+.atariicon{
+    height: 20px;
+    width: 20px;
+    margin-left: 8px;
+    
+}
+
+.gamecubeicon{
+    height: 20px;
+    width: 20px;
+    margin-left: 8px;
+    
+}
+
+.gameboyicon{
+    height: 20px;
+    width: 20px;
+    margin-left: 8px;
+    
+}
+
+#inputField {
+    font-family: 'Oxanium' ;
+}
+
+#clickme{
+    font-size: 100px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    top: -60px;
+}
+
+
+img {
+    height: 200px;
+    width: 200px;
+}
+
+#splash{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    position: relative; 
+    top:-305px;
+    
+
+}
+
+.screenshots { 
+    margin: 15px;
+    border: 5px solid black;
+    
+}
+
+p, li {
+    font-family: 'VT323';
+    font-size: 20px;
+}
+
+th {
+    font-family: 'Press Start 2P';
+    
+}
+
+.lead {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.capitalize {
+    text-transform:capitalize;
+}
+
+@media only screen and (min-width: 750px) {
+
+#divsplash {
+    background-image: url(splashBG.jpg);
+    background-size: contain;
+    background-color: rgba(255, 255, 255, 0.4);
+    background-blend-mode: lighten;
+    background-repeat: no-repeat;
+}
+
+
+#splash {
+    height: 777px;
+    width: 777px;
+    cursor: pointer;
+}    
+
+
+
+#faqBlock, #oneupBlock, #poison {
+    height: 75px;
+    width: 75px;
+    position: absolute;
+    margin-block-start: 30px;
+    margin-block-end: 30px;
+    transition: ease-in height 1s, width, 1s;
+    display: block;
+}
+
+#faqBlock {
+    left: 385px;
+}
+
+#oneupBlock {
+    left: 625px;
+}
+ 
+#poison {
+    left: 865px;
+    width: 80px;
+}
+
+#faqBlock:hover, #oneupBlock:hover, #poison:hover {
+    height: 100px;
+    width: 100px;
+    cursor: url('Mario\ Point\ Link.png'), url('Mario\ Point\ Link.cur'), auto;
+}
+
+#bottomBox {
+    margin-block-start: 200px;
+}
+
+}
+
+@media only screen and (max-width: 750px) {
+
+* {
+    text-align: center;
+}
+
+#bottomBox {
+    align-content: center;
+        }
+
+#splash {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0%;
+    position: relative;
+    bottom: 100px
+}
+
+#divsplash {
+    background-image: url(splashBG.jpg);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    width: fit-content;
+    height: 100%;
+    padding-bottom: 120px;
+    margin-bottom: 0px;
+}
+
+#clickme {
+    text-align: center;
+    position: relative;
+    top: 76px;
+    left: 3px;
+    z-index: 1;
+}
+
+img {
+    margin: auto;
+}
+
+img, button, .screenshots {
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    display: block;
+}
+
+button {
+    max-width: 70%;
+}
+
+#ainfobut {
+    display: block;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+}
+
+#faqBlock, #oneupBlock, #poison {
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    margin-inline-start: 30px;
+    margin-inline-end: 30px;
+}
+
+#faqBlock:hover, #oneupBlock:hover, #poison:hover {
+    height: 50px;
+    width: 50px;
+}
+
+.n64icon{
+    height: 20px;
+    width: 20px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    
+}
+
+.genesisicon{
+    height: 20px;
+    width: 20px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    
+}
+
+.xboxicon{
+    height: 20px;
+    width: 20px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    
+}
+
+.snesicon{
+    height: 20px;
+    width: 20px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    
+}
+
+.ps1icon{
+    height: 20px;
+    width: 20px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    
+}
+
+.nesicon{
+    height: 20px;
+    width: 20px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    
+}
+
+.dreamcasticon{
+    height: 20px;
+    width: 20px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    
+}
+
+.atariicon{
+    height: 20px;
+    width: 20px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    
+}
+
+.gamecubeicon{
+    height: 20px;
+    width: 20px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    
+}
+
+.gameboyicon{
+    height: 20px;
+    width: 20px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    
+}
+
+}

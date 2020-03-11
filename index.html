@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Retro City</title>
 </head>
 <body>
@@ -25,5 +26,164 @@
 
     </div>
 </section>
+=======
+    <title>Retro City </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css" integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg==" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Oxanium|Press+Start+2P|VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+  <section class="splash" id="divsplash">
+    <div id="splashHeader">
+      <h2>Welcome to....</h2>
+      <h1>
+      <span id="r1">R</span><span id="e">E</span><span id="t">T</span><span id="r2">R</span><span id="o">O </span><span>C</span><i class="fas fa-building" id="building"></i><span>TY</span>
+      </h1>
+      </div>
+      <p id="clickme" class="greeting">Click me!</p>
+      <img src="assets/gameboy.gif" class="greeting" id="splash">
+    </section>
+<section id="nonsplashContent">
+  <div class="inputcontent">
+        <header>
+          <h1>
+              <span id="r1">R</span><span id="e">E</span><span id="t">T</span><span id="r2">R</span><span id="o">O </span><span>C</span><i class="fas fa-building" id="building"></i><span>TY</span> 
+          </h1>
+      </header>
+      <br>
+    <section id="topBoxes">
+      <div id="inputField">
+          <h3>Input Field</h3>
+          <button class="button" type="button" data-toggle="example-dropdown-bottom-center" id="ainfobut">Advanced Search</button>
+          <div class="dropdown-pane" data-position="bottom" data-alignment="center" id="example-dropdown-bottom-center" data-dropdown data-auto-focus="true">
+
+            Advanced Search
+            <form>
+              <div class="grid-container">
+                <div class="grid-x grid-margin-x">
+                  <div class="cell medium-10">
+                    <label>Name
+                      <input type="text" placeholder="Super Mario World" id="nameInput" class="capitalize">
+                    </label>
+                  </div>
+                  <div class="cell medium-10">
+                    <a class="alert button" id="sTitleButton">Search Title</a>
+                  </div>
+                  <div class="cell medium-10">
+                      <label>Genre
+                        <input type="text" placeholder="Shooter, Strategy, etc." id="genreInput" class="capitalize">
+                      </label>
+                  </div>
+                  <div class="cell medium-10">
+                    <label>Platform
+                      <select id="platformSelect">
+                        <option value="genesis">Genesis</option>
+                        <option value="xbox">Xbox</option>
+                        <option value="snes">SNES</option>
+                        <option value="n64">N64</option>
+                        <option value="gameboy">Gameboy</option>
+                        <option value="ps1">PS1</option>
+                        <option value="nes">NES</option>
+                        <option value="dreamcast">Dreamcast</option>
+                        <option value="atari">Atari</option>
+                        <option value="gamecube">Gamecube</option>
+                      </select>
+                    </label>
+                  </div>
+                  <a class="alert button" id="sGPbutton">Search by Genre/Platform</a>
+                </div>
+              </div>
+            </form>
+          </div>
+          </div>
+      </div>
+      <!-- CONSOLE BUTTONS -->
+      <div id="byConsole">
+          <h3>By Console</h3>
+          <div id="consoleButtons">
+              <div class="expanded button-group">
+                  <a class="secondary button" id="genButton">Genesis<img src="assets/genesis.png" class="genesisicon"></a>
+                  <a class="alert button" id="xButton">Xbox<img src="assets/xbox.png" class="xboxicon"></a>
+                  <a class="warning button" id="snesButton">SNES<img src="assets/super.png" class="snesicon"></a>
+              </div>
+              <div class="expanded button-group">
+                <a class="alert button" id="n64Button">N64<img src="assets/v29raavpevi21.png" class="n64icon"></a>
+                <a class="button" id="gboyButton">Gameboy<img src="assets/videogame_icons-05-512.png" class="gameboyicon"></a>
+                <a class="secondary button" id="ps1Button">PS1<img src="assets/playstation-2-logo-png-8.png" class="ps1icon"></a>
+                <a class="success button" id="nesButton">NES<img src="assets/nes-controller-png-5.png" class="nesicon"></a>
+            </div>
+            <div class="expanded button-group">
+                  <a class="warning button" id="dreamButton">Dreamcast<img src="assets/1200px-Dreamcast_logo.svg.png" class="dreamcasticon"></a>
+                  <a class="alert button" id="atariButton">Atari<img src="assets/atari-logo-png-atari-logo-05-by-dhlarson-964.png" class="atariicon"></a>
+                  <a class="button" id="gcButton">Gamecube<img src="assets/game-cube-logo-png-15.png" class="gamecubeicon"></a>
+            </div>
+            <div id="iconDiv">
+              <img src="assets/oneUp.png" alt="one up shroom icon" id="oneupBlock">
+              <img src="assets/faq.png" alt="question block icon" id="faqBlock" data-open="faqModal">
+              <img src="assets/poison.png" alt="poison shroom icon" id="poison">
+            </div>
+            <div class="reveal" id="faqModal" data-reveal>
+              <h1>FAQ</h1>
+              <p class="lead">The content isn't loading, why?</p>
+              <p>Check your internet connection and clear cookies/browser cache if encountering a 400 error.</p>
+              <p class="lead">When I search for genre, nothing appears?</p>
+              <p>Make sure you are using a genre that the API can recognize, here is a list of valid genres below. Keep in mind that most games fit into more than one of these categories..</p>
+              <ul>
+                <li>Simulator</li>
+                <li>Quiz/Trivia</li>
+                <li>Fighting</li>
+                <li>Strategy</li>
+                <li>Adventure</li>
+                <li>Role-Playing (RPG)</li>
+                <li>Shooter</li>
+                <li>Music</li>
+                <li>Indie</li>
+                <li>Turn-based strategy (TBS)</li>
+                <li>Pinball</li>
+                <li>Platform</li>
+                <li>Racing</li>
+                <li>Sport</li>
+                <li>Arcade</li>
+                <li>Visual Novel</li>
+                <li>Hack and slash/Beat 'em up</li>
+                <li>Point-and-click</li>
+              </ul>
+              <p class="lead">What are all these NaN tags on the games?!</p>
+              <p>The VGDB API was used as a source for the total review rating for each game, and many games have not been rated by the VGDB community. NaN represents these games.</p>
+              <p class="lead">Why do I keep seeing Command & Conquer and these other games?!</p>
+              <p>You appear to be viewing the default list of generated games, meaning that your search criteria yielded no results. Ensure that you are capitalizing the first letter of each word in your game, as the search does not pick up on lowercase titles.</p>
+              <p class="lead">What is the best video game of all time?</p>
+              <p>Super Mario World for the SNES.</p>
+              <button class="close-button" data-close aria-label="Close modal" type="button">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+      </div>
+    </section>
+    <section id="bottomBox">
+      <h2>List of Games</h2>
+      <table id="results" class="stack">
+        <thead>
+          <tr>
+            <th width="100">Title</th>
+            <th width="100">Image</th>
+            <th width="100">Rating</th>
+            <th width="100">Release Dates</th>
+            <th width="100">Additional Information</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</section>   
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/e0d2cdf98c.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js" integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA==" crossorigin="anonymous"></script>
+<script type="text/javascript">$(document).foundation();</script>
+<script src="assets/script.js"></script>
+>>>>>>> 7caef8be224b690c555345ebf8176f2bcc7d2a4c
 </body>
 </html>

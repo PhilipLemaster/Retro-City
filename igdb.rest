@@ -1,0 +1,47 @@
+POST https://api-v3.igdb.com/platforms
+user-key: f13f3ae70c0329eaf198249bba188dbd
+
+
+fields *; where category = 5; limit 300;
+
+###
+
+# Genesis Button
+POST https://api-v3.igdb.com/games
+user-key: f13f3ae70c0329eaf198249bba188dbd
+
+
+fields name,summary,rating,cover.url,release_dates.human,platforms.name; where platforms = 19 ; sort popularity desc; limit 50;
+
+###
+
+# Genesis Button Image
+POST https://api-v3.igdb.com/covers
+user-key: f13f3ae70c0329eaf198249bba188dbd
+
+
+fields url; where platforms = 4 ; sort popularity desc; limit 50;
+
+###
+
+POST https://api-v3.igdb.com/genres
+user-key: f13f3ae70c0329eaf198249bba188dbd
+
+fields name; limit 100;
+
+###
+
+# SNES Button
+POST https://api-v3.igdb.com/games
+user-key: f13f3ae70c0329eaf198249bba188dbd
+
+
+fields name,total_rating,cover.url,release_dates.human,platforms.name,summary,genres.name,screenshots.url; where genres.name ="Shooter" & platforms = 29; sort popularity desc; limit 100;
+
+###
+
+# SNES Button
+GET http://www.gamespot.com/api/games/?api_key=0e27e3e25c2d1e2fdf52fae8191317b1730d9589&format=json&filter=genres:Arcade
+
+fields genres.name; 
+###
