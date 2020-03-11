@@ -6,11 +6,11 @@
 button {
     touch-action: none;
   }
-  
+
 body {
     background-image: url(full\ BG.jpg);
     background-repeat: repeat-y;
-    background-size: contain;
+    background-size: auto;
     background-color: rgba(255, 255, 255, 0.4);
     background-blend-mode: lighten;
 }

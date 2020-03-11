@@ -13,7 +13,7 @@ $(".greeting").on("click  ", function(event) {
 });
 
 // GENESIS BUTTON API PULL AND DOM CREATION
-$(document).on('click touchstart', '#genButton',function(event) {
+$(document).on('click', '#genButton',function(event) {
     event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -101,7 +101,7 @@ $(document).on('click touchstart', '#genButton',function(event) {
             }
             
 
-            mcBut.on('click touchstart', (function(event){
+            mcBut.on('click', (function(event){
                 console.log('sup');
                 $(this).nextAll().toggle();
             })
@@ -121,7 +121,7 @@ $(document).on('click touchstart', '#genButton',function(event) {
 
 // N64 BUTTON API PULL AND DOM CREATION
 
-$(document).on('click touchstart', '#n64Button',function(event) {
+$(document).on('click', '#n64Button',function(event) {
   event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -210,7 +210,7 @@ $(document).on('click touchstart', '#n64Button',function(event) {
             }
             
 
-            mcBut.on('click touchstart', (function(event){
+            mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
               })
@@ -230,7 +230,7 @@ $(document).on('click touchstart', '#n64Button',function(event) {
 
 // XBOX BUTTON API PULL AND DOM CREATION
 
-$(document).on('click touchstart', '#xButton',function(event) {
+$(document).on('click', '#xButton',function(event) {
   event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -319,7 +319,7 @@ $(document).on('click touchstart', '#xButton',function(event) {
             }
             
 
-            mcBut.on('click touchstart', (function(event){
+            mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
               })
@@ -339,7 +339,7 @@ $(document).on('click touchstart', '#xButton',function(event) {
 
 // PS1 BUTTON API PULL AND DOM CREATION
 
-$(document).on('click touchstart', '#ps1Button',function(event) {
+$(document).on('click', '#ps1Button',function(event) {
   event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -427,7 +427,7 @@ $(document).on('click touchstart', '#ps1Button',function(event) {
             }
             
 
-            mcBut.on('click touchstart', (function(event){
+            mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
               })
@@ -447,7 +447,7 @@ $(document).on('click touchstart', '#ps1Button',function(event) {
 
 // SNES BUTTON API PULL AND DOM CREATION
 
-$(document).on('click touchstart', '#snesButton',function(event) {
+$(document).on('click', '#snesButton',function(event) {
   event.preventDefault();
     var queryURL = "https://api-v3.igdb.com/games";
 
@@ -535,7 +535,7 @@ $(document).on('click touchstart', '#snesButton',function(event) {
             }
             
 
-            mcBut.on('click touchstart', (function(event){
+            mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
               })
@@ -555,7 +555,7 @@ $(document).on('click touchstart', '#snesButton',function(event) {
 
 // ATARI BUTTON API PULL AND DOM CREATION
 
-$(document).on('click touchstart', '#atariButton',function(event) {
+$(document).on('click', '#atariButton',function(event) {
   event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -644,7 +644,7 @@ $(document).on('click touchstart', '#atariButton',function(event) {
             }
             
 
-            mcBut.on('click touchstart', (function(event){
+            mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
               })
@@ -664,7 +664,7 @@ $(document).on('click touchstart', '#atariButton',function(event) {
 
 // GAMECUBE BUTTON API PULL AND DOM CREATION
 
-$(document).on('click touchstart', '#gcButton',function(event) {
+$(document).on('click', '#gcButton',function(event) {
   event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -753,7 +753,7 @@ $(document).on('click touchstart', '#gcButton',function(event) {
             }
             
 
-            mcBut.on('click touchstart', (function(event){
+            mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
               })
@@ -773,7 +773,7 @@ $(document).on('click touchstart', '#gcButton',function(event) {
 
 // DREAMCAST BUTTON API PULL AND DOM CREATION
 
-$(document).on('click touchstart', '#dreamButton',function(event) {
+$(document).on('click', '#dreamButton',function(event) {
   event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -862,7 +862,7 @@ $(document).on('click touchstart', '#dreamButton',function(event) {
             }
             
 
-            mcBut.on('click touchstart', (function(event){
+            mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
               })
@@ -882,7 +882,7 @@ $(document).on('click touchstart', '#dreamButton',function(event) {
 
 // GAMEBOY BUTTON API PULL AND DOM CREATION
 
-$(document).on('click touchstart', '#gboyButton',function(event) {
+$(document).on('click', '#gboyButton',function(event) {
   event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -971,7 +971,7 @@ $(document).on('click touchstart', '#gboyButton',function(event) {
             }
             
 
-            mcBut.on('click touchstart', (function(event){
+            mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
               })
@@ -991,7 +991,7 @@ $(document).on('click touchstart', '#gboyButton',function(event) {
 
 // NES BUTTON API PULL AND DOM CREATION
 
-$(document).on('click touchstart', '#nesButton',function(event) {
+$(document).on('click', '#nesButton',function(event) {
   event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -1080,7 +1080,7 @@ $(document).on('click touchstart', '#nesButton',function(event) {
             }
             
 
-            mcBut.on('click touchstart', (function(event){
+            mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
               })
@@ -1100,7 +1100,7 @@ $(document).on('click touchstart', '#nesButton',function(event) {
 
 // SEARCH INPUT API PULL AND DOM CREATION FOR TITLE
 
-$(document).on('click touchstart', '#sTitleButton',function(event) {
+$(document).on('click', '#sTitleButton',function(event) {
   event.preventDefault();
     var nameinput = String($('#nameInput').val().substr(0,1).toUpperCase() + String($('#nameInput').val().substr(1).toLowerCase()));
     var queryURL = "http://www.gamespot.com/api/games/?api_key=0e27e3e25c2d1e2fdf52fae8191317b1730d9589&format=json&filter=name:" + nameinput;
@@ -1143,7 +1143,7 @@ $(document).on('click touchstart', '#sTitleButton',function(event) {
             $(mcBut).addClass('clear button warning').attr('data-open', 'moreContent');
             mcBut.appendTo(tRow);
 
-            mcBut.on('click touchstart', (function(event){
+            mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
               })
@@ -1172,7 +1172,7 @@ $(document).on('click touchstart', '#sTitleButton',function(event) {
 
             var saveButton = $('<button>Save</button>');
             saveButton.addClass('clear button alert').appendTo(mcBox);
-            saveButton.on('click touchstart', (function(event){
+            saveButton.on('click', (function(event){
                 var thisTitle = $(this).siblings('h3').text()
                 var counter = localStorage.getItem('counter');
                 counter++;
@@ -1193,7 +1193,7 @@ $(document).on('click touchstart', '#sTitleButton',function(event) {
 
 // SEARCH INPUT API PULL AND DOM CREATION FOR GENRE
 
-$(document).on('click touchstart', '#sGPbutton',function(event) {
+$(document).on('click', '#sGPbutton',function(event) {
   event.preventDefault();
 
     var queryURL = "https://api-v3.igdb.com/games";
@@ -1315,7 +1315,7 @@ $(document).on('click touchstart', '#sGPbutton',function(event) {
             }
             
 
-            mcBut.on('click touchstart', (function(event){
+            mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
               })
@@ -1325,7 +1325,7 @@ $(document).on('click touchstart', '#sGPbutton',function(event) {
 
             var saveButton = $('<button>Save</button>');
             saveButton.addClass('clear button alert').appendTo(mcBox);
-            saveButton.on('click touchstart', (function(event){
+            saveButton.on('click', (function(event){
                 var thisTitle = $(this).siblings('h3').text()
                 var counter = localStorage.getItem('counter');
                 counter++;
@@ -1356,7 +1356,7 @@ $(document).on('click touchstart', '#sGPbutton',function(event) {
 
 var tBody = $('tbody');
 
-$(document).on('click touchstart', '#oneupBlock',function(event) {
+$(document).on('click', '#oneupBlock',function(event) {
   event.preventDefault();
     tBody.empty();
     counter = parseInt(localStorage.getItem('counter')) + 1;
@@ -1379,7 +1379,7 @@ $(document).on('click touchstart', '#oneupBlock',function(event) {
 
 
 var clearShroom = $('#poison');
-$(document).on('click touchstart', '#poison',function(event) {
+$(document).on('click', '#poison',function(event) {
       event.preventDefault();
       localStorage.clear();
       $(this).animate({
