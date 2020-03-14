@@ -4,7 +4,7 @@ $(document).ready(function(event){
 $("#nonsplashContent").hide(100);
 $('#bottomBox').hide(100);
 $(".greeting").on("click  ", function(event) {
-  event.preventDefault();
+   
   $(".splash").hide(100);
   $('#bottomBox').show(100);
   $("#nonsplashContent").show(100);
@@ -14,7 +14,7 @@ $(".greeting").on("click  ", function(event) {
 
 // GENESIS BUTTON API PULL AND DOM CREATION
 $(document).on('click', '#genButton',function(event) {
-    event.preventDefault();
+     
 
     var queryURL = "https://api-v3.igdb.com/games";
 
@@ -31,7 +31,6 @@ $(document).on('click', '#genButton',function(event) {
 
       .then(function(response) {
         var results = response;
-        coverimage = response.cover
         console.log(response);
 
         var table = $('#results');
@@ -40,6 +39,7 @@ $(document).on('click', '#genButton',function(event) {
 
         for (var i = 0; i < 50; i++) {
             // Variables for main table
+            coverimage = results[i].cover
             var tRow = $('<tr>');
             tRow.appendTo(tBody);
 
@@ -47,12 +47,12 @@ $(document).on('click', '#genButton',function(event) {
             title.appendTo(tRow);
 
 
-            if (results[i].cover?.url === undefined) {
+            if (coverimage === undefined) {
                 source = 'homestaymatch.com/images/no-image-available.png';
             }
 
             else {
-                source = String(results[i].cover?.url);
+                source = String(coverimage.url);
             }
                 
             var image = $('<img>');
@@ -62,7 +62,8 @@ $(document).on('click', '#genButton',function(event) {
             var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
             rating.appendTo(tRow);
 
-            var releaseDates = $('<th>').text(results[i].release_dates[0]?.human);
+            let rdate = results[i].release_dates[0];
+            var releaseDates = $('<th>').text(rdate.human);
             releaseDates.appendTo(tRow);
 
             var mcBut = $('<button>More Info</button>');
@@ -82,15 +83,18 @@ $(document).on('click', '#genButton',function(event) {
             }
 
             if (results[i].genres != undefined || results[i].genres != null) {
-                var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
+                let mcGen = results[i].genres[0];
+                var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
                 mcGenres.appendTo(mcBox);
             }
-          
+            
+            
             for (y = 0; y < 3; y++) {
               if (results[i].screenshots != undefined) {
-                if (results[i].screenshots[y]?.url != undefined || results[i].screenshots[y]?.url != null) {
+                let mcScreenSource = results[i].screenshots[y];
+                if (mcScreenSource != undefined || mcScreenSource != null) {
+                  let mcSource = mcScreenSource.url;
                   var mcPic = $('<img>');
-                  mcSource = results[i].screenshots[y]?.url;
                   mcPic.attr("src", "https://" + mcSource);
                   mcPic.appendTo(mcBox);
                   mcPic.addClass('screenshots');
@@ -122,7 +126,7 @@ $(document).on('click', '#genButton',function(event) {
 // N64 BUTTON API PULL AND DOM CREATION
 
 $(document).on('click', '#n64Button',function(event) {
-  event.preventDefault();
+   
 
     var queryURL = "https://api-v3.igdb.com/games";
 
@@ -139,7 +143,7 @@ $(document).on('click', '#n64Button',function(event) {
 
       .then(function(response) {
         var results = response;
-        coverimage = response.cover
+        coverimage = results[i].cover
         console.log(response);
 
         var table = $('#results');
@@ -155,12 +159,12 @@ $(document).on('click', '#n64Button',function(event) {
             title.appendTo(tRow);
 
 
-            if (results[i].cover?.url === undefined) {
+            if (coverimage.url === undefined) {
                 source = 'homestaymatch.com/images/no-image-available.png';
             }
 
             else {
-                source = String(results[i].cover?.url);
+                source = String(coverimage.url);
             }
                 
             var image = $('<img>');
@@ -170,7 +174,8 @@ $(document).on('click', '#n64Button',function(event) {
             var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
             rating.appendTo(tRow);
 
-            var releaseDates = $('<th>').text(results[i].release_dates[0]?.human);
+            let rdate = results[i].release_dates[0];
+            var releaseDates = $('<th>').text(rdate.human);
             releaseDates.appendTo(tRow);
 
             var mcBut = $('<button>More Info</button>');
@@ -190,16 +195,18 @@ $(document).on('click', '#n64Button',function(event) {
             }
             
             if (results[i].genres != undefined || results[i].genres != null) {
-                var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
+                let mcGen = results[i].genres[0];
+                var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
                 mcGenres.appendTo(mcBox);
             }
-
-          
+            
+            
             for (y = 0; y < 3; y++) {
               if (results[i].screenshots != undefined) {
-                if (results[i].screenshots[y]?.url != undefined || results[i].screenshots[y]?.url != null) {
+                let mcScreenSource = results[i].screenshots[y];
+                let mcSource = mcScreenSource.url;
+                if (mcScreenSource.url != undefined || mcScreenSource.url != null) {
                   var mcPic = $('<img>');
-                  mcSource = results[i].screenshots[y]?.url;
                   mcPic.attr("src", "https://" + mcSource);
                   mcPic.appendTo(mcBox);
                   mcPic.addClass('screenshots');
@@ -231,7 +238,7 @@ $(document).on('click', '#n64Button',function(event) {
 // XBOX BUTTON API PULL AND DOM CREATION
 
 $(document).on('click', '#xButton',function(event) {
-  event.preventDefault();
+   
 
     var queryURL = "https://api-v3.igdb.com/games";
 
@@ -248,7 +255,7 @@ $(document).on('click', '#xButton',function(event) {
 
       .then(function(response) {
         var results = response;
-        coverimage = response.cover
+        coverimage = results[i].cover
         console.log(response);
 
         var table = $('#results');
@@ -264,12 +271,12 @@ $(document).on('click', '#xButton',function(event) {
             title.appendTo(tRow);
 
 
-            if (results[i].cover?.url === undefined) {
+            if (coverimage.url === undefined) {
                 source = 'homestaymatch.com/images/no-image-available.png';
             }
 
             else {
-                source = String(results[i].cover?.url);
+                source = String(coverimage.url);
             }
                 
             var image = $('<img>');
@@ -279,7 +286,8 @@ $(document).on('click', '#xButton',function(event) {
             var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
             rating.appendTo(tRow);
 
-            var releaseDates = $('<th>').text(results[i].release_dates[0]?.human);
+            let rdate = results[i].release_dates[0];
+            var releaseDates = $('<th>').text(rdate.human);
             releaseDates.appendTo(tRow);
 
             var mcBut = $('<button>More Info</button>');
@@ -299,16 +307,18 @@ $(document).on('click', '#xButton',function(event) {
             }
             
             if (results[i].genres != undefined || results[i].genres != null) {
-                var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
+                let mcGen = results[i].genres[0];
+                var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
                 mcGenres.appendTo(mcBox);
             }
-
-          
+            
+            
             for (y = 0; y < 3; y++) {
               if (results[i].screenshots != undefined) {
-                if (results[i].screenshots[y]?.url != undefined || results[i].screenshots[y]?.url != null) {
+                let mcScreenSource = results[i].screenshots[y];
+                let mcSource = mcScreenSource.url;
+                if (mcScreenSource.url != undefined || mcScreenSource.url != null) {
                   var mcPic = $('<img>');
-                  mcSource = results[i].screenshots[y]?.url;
                   mcPic.attr("src", "https://" + mcSource);
                   mcPic.appendTo(mcBox);
                   mcPic.addClass('screenshots');
@@ -340,7 +350,7 @@ $(document).on('click', '#xButton',function(event) {
 // PS1 BUTTON API PULL AND DOM CREATION
 
 $(document).on('click', '#ps1Button',function(event) {
-  event.preventDefault();
+   
 
     var queryURL = "https://api-v3.igdb.com/games";
 
@@ -357,7 +367,7 @@ $(document).on('click', '#ps1Button',function(event) {
 
       .then(function(response) {
         var results = response;
-        coverimage = response.cover
+        coverimage = results[i].cover
         console.log(response);
 
         var table = $('#results');
@@ -373,12 +383,12 @@ $(document).on('click', '#ps1Button',function(event) {
             title.appendTo(tRow);
 
 
-            if (results[i].cover?.url === undefined) {
+            if (coverimage.url === undefined) {
                 source = 'homestaymatch.com/images/no-image-available.png';
             }
 
             else {
-                source = String(results[i].cover?.url);
+                source = String(coverimage.url);
             }
                 
             var image = $('<img>');
@@ -388,7 +398,8 @@ $(document).on('click', '#ps1Button',function(event) {
             var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
             rating.appendTo(tRow);
 
-            var releaseDates = $('<th>').text(results[i].release_dates[0]?.human);
+            let rdate = results[i].release_dates[0];
+            var releaseDates = $('<th>').text(rdate.human);
             releaseDates.appendTo(tRow);
 
             var mcBut = $('<button>More Info</button>');
@@ -448,7 +459,7 @@ $(document).on('click', '#ps1Button',function(event) {
 // SNES BUTTON API PULL AND DOM CREATION
 
 $(document).on('click', '#snesButton',function(event) {
-  event.preventDefault();
+   
     var queryURL = "https://api-v3.igdb.com/games";
 
     $.ajax({
@@ -464,7 +475,7 @@ $(document).on('click', '#snesButton',function(event) {
 
       .then(function(response) {
         var results = response;
-        coverimage = response.cover
+        coverimage = results[i].cover
         console.log(response);
 
         var table = $('#results');
@@ -480,12 +491,12 @@ $(document).on('click', '#snesButton',function(event) {
             title.appendTo(tRow);
 
 
-            if (results[i].cover?.url === undefined) {
+            if (coverimage.url === undefined) {
                 source = 'homestaymatch.com/images/no-image-available.png';
             }
 
             else {
-                source = String(results[i].cover?.url);
+                source = String(coverimage.url);
             }
                 
             var image = $('<img>');
@@ -495,7 +506,8 @@ $(document).on('click', '#snesButton',function(event) {
             var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
             rating.appendTo(tRow);
 
-            var releaseDates = $('<th>').text(results[i].release_dates[0]?.human);
+            let rdate = results[i].release_dates[0];
+            var releaseDates = $('<th>').text(rdate.human);
             releaseDates.appendTo(tRow);
 
             var mcBut = $('<button>More Info</button>');
@@ -515,16 +527,18 @@ $(document).on('click', '#snesButton',function(event) {
             }
             
             if (results[i].genres != undefined || results[i].genres != null) {
-                var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
+                let mcGen = results[i].genres[0];
+                var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
                 mcGenres.appendTo(mcBox);
             }
-
-          
+            
+            
             for (y = 0; y < 3; y++) {
               if (results[i].screenshots != undefined) {
-                if (results[i].screenshots[y]?.url != undefined || results[i].screenshots[y]?.url != null) {
+                let mcScreenSource = results[i].screenshots[y];
+                let mcSource = mcScreenSource.url;
+                if (mcScreenSource.url != undefined || mcScreenSource.url != null) {
                   var mcPic = $('<img>');
-                  mcSource = results[i].screenshots[y]?.url;
                   mcPic.attr("src", "https://" + mcSource);
                   mcPic.appendTo(mcBox);
                   mcPic.addClass('screenshots');
@@ -556,7 +570,7 @@ $(document).on('click', '#snesButton',function(event) {
 // ATARI BUTTON API PULL AND DOM CREATION
 
 $(document).on('click', '#atariButton',function(event) {
-  event.preventDefault();
+   
 
     var queryURL = "https://api-v3.igdb.com/games";
 
@@ -573,7 +587,7 @@ $(document).on('click', '#atariButton',function(event) {
 
       .then(function(response) {
         var results = response;
-        coverimage = response.cover
+        coverimage = results[i].cover
         console.log(response);
 
         var table = $('#results');
@@ -589,12 +603,12 @@ $(document).on('click', '#atariButton',function(event) {
             title.appendTo(tRow);
 
 
-            if (results[i].cover?.url === undefined) {
+            if (coverimage.url === undefined) {
                 source = 'homestaymatch.com/images/no-image-available.png';
             }
 
             else {
-                source = String(results[i].cover?.url);
+                source = String(coverimage.url);
             }
                 
             var image = $('<img>');
@@ -604,7 +618,8 @@ $(document).on('click', '#atariButton',function(event) {
             var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
             rating.appendTo(tRow);
 
-            var releaseDates = $('<th>').text(results[i].release_dates[0]?.human);
+            let rdate = results[i].release_dates[0];
+            var releaseDates = $('<th>').text(rdate.human);
             releaseDates.appendTo(tRow);
 
             var mcBut = $('<button>More Info</button>');
@@ -624,16 +639,18 @@ $(document).on('click', '#atariButton',function(event) {
             }
             
             if (results[i].genres != undefined || results[i].genres != null) {
-                var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
+                let mcGen = results[i].genres[0];
+                var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
                 mcGenres.appendTo(mcBox);
             }
-
-          
+            
+            
             for (y = 0; y < 3; y++) {
               if (results[i].screenshots != undefined) {
-                if (results[i].screenshots[y]?.url != undefined || results[i].screenshots[y]?.url != null) {
+                let mcScreenSource = results[i].screenshots[y];
+                let mcSource = mcScreenSource.url;
+                if (mcScreenSource.url != undefined || mcScreenSource.url != null) {
                   var mcPic = $('<img>');
-                  mcSource = results[i].screenshots[y]?.url;
                   mcPic.attr("src", "https://" + mcSource);
                   mcPic.appendTo(mcBox);
                   mcPic.addClass('screenshots');
@@ -665,7 +682,7 @@ $(document).on('click', '#atariButton',function(event) {
 // GAMECUBE BUTTON API PULL AND DOM CREATION
 
 $(document).on('click', '#gcButton',function(event) {
-  event.preventDefault();
+   
 
     var queryURL = "https://api-v3.igdb.com/games";
 
@@ -682,7 +699,7 @@ $(document).on('click', '#gcButton',function(event) {
 
       .then(function(response) {
         var results = response;
-        coverimage = response.cover
+        coverimage = results[i].cover
         console.log(response);
 
         var table = $('#results');
@@ -698,12 +715,12 @@ $(document).on('click', '#gcButton',function(event) {
             title.appendTo(tRow);
 
 
-            if (results[i].cover?.url === undefined) {
+            if (coverimage.url === undefined) {
                 source = 'homestaymatch.com/images/no-image-available.png';
             }
 
             else {
-                source = String(results[i].cover?.url);
+                source = String(coverimage.url);
             }
                 
             var image = $('<img>');
@@ -713,7 +730,8 @@ $(document).on('click', '#gcButton',function(event) {
             var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
             rating.appendTo(tRow);
 
-            var releaseDates = $('<th>').text(results[i].release_dates[0]?.human);
+            let rdate = results[i].release_dates[0];
+            var releaseDates = $('<th>').text(rdate.human);
             releaseDates.appendTo(tRow);
 
             var mcBut = $('<button>More Info</button>');
@@ -733,16 +751,18 @@ $(document).on('click', '#gcButton',function(event) {
             }
             
             if (results[i].genres != undefined || results[i].genres != null) {
-                var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
+                let mcGen = results[i].genres[0];
+                var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
                 mcGenres.appendTo(mcBox);
             }
-
-          
+            
+            
             for (y = 0; y < 3; y++) {
               if (results[i].screenshots != undefined) {
-                if (results[i].screenshots[y]?.url != undefined || results[i].screenshots[y]?.url != null) {
+                let mcScreenSource = results[i].screenshots[y];
+                let mcSource = mcScreenSource.url;
+                if (mcScreenSource.url != undefined || mcScreenSource.url != null) {
                   var mcPic = $('<img>');
-                  mcSource = results[i].screenshots[y]?.url;
                   mcPic.attr("src", "https://" + mcSource);
                   mcPic.appendTo(mcBox);
                   mcPic.addClass('screenshots');
@@ -774,7 +794,7 @@ $(document).on('click', '#gcButton',function(event) {
 // DREAMCAST BUTTON API PULL AND DOM CREATION
 
 $(document).on('click', '#dreamButton',function(event) {
-  event.preventDefault();
+   
 
     var queryURL = "https://api-v3.igdb.com/games";
 
@@ -791,7 +811,7 @@ $(document).on('click', '#dreamButton',function(event) {
 
       .then(function(response) {
         var results = response;
-        coverimage = response.cover
+        coverimage = results[i].cover
         console.log(response);
 
         var table = $('#results');
@@ -807,12 +827,12 @@ $(document).on('click', '#dreamButton',function(event) {
             title.appendTo(tRow);
 
 
-            if (results[i].cover?.url === undefined) {
+            if (coverimage.url === undefined) {
                 source = 'homestaymatch.com/images/no-image-available.png';
             }
 
             else {
-                source = String(results[i].cover?.url);
+                source = String(coverimage.url);
             }
                 
             var image = $('<img>');
@@ -822,7 +842,8 @@ $(document).on('click', '#dreamButton',function(event) {
             var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
             rating.appendTo(tRow);
 
-            var releaseDates = $('<th>').text(results[i].release_dates[0]?.human);
+            let rdate = results[i].release_dates[0];
+            var releaseDates = $('<th>').text(rdate.human);
             releaseDates.appendTo(tRow);
 
             var mcBut = $('<button>More Info</button>');
@@ -842,16 +863,18 @@ $(document).on('click', '#dreamButton',function(event) {
             }
             
             if (results[i].genres != undefined || results[i].genres != null) {
-                var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
+                let mcGen = results[i].genres[0];
+                var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
                 mcGenres.appendTo(mcBox);
             }
-
-          
+            
+            
             for (y = 0; y < 3; y++) {
               if (results[i].screenshots != undefined) {
-                if (results[i].screenshots[y]?.url != undefined || results[i].screenshots[y]?.url != null) {
+                let mcScreenSource = results[i].screenshots[y];
+                let mcSource = mcScreenSource.url;
+                if (mcScreenSource.url != undefined || mcScreenSource.url != null) {
                   var mcPic = $('<img>');
-                  mcSource = results[i].screenshots[y]?.url;
                   mcPic.attr("src", "https://" + mcSource);
                   mcPic.appendTo(mcBox);
                   mcPic.addClass('screenshots');
@@ -883,7 +906,7 @@ $(document).on('click', '#dreamButton',function(event) {
 // GAMEBOY BUTTON API PULL AND DOM CREATION
 
 $(document).on('click', '#gboyButton',function(event) {
-  event.preventDefault();
+   
 
     var queryURL = "https://api-v3.igdb.com/games";
 
@@ -900,7 +923,7 @@ $(document).on('click', '#gboyButton',function(event) {
 
       .then(function(response) {
         var results = response;
-        coverimage = response.cover
+        coverimage = results[i].cover
         console.log(response);
 
         var table = $('#results');
@@ -916,12 +939,12 @@ $(document).on('click', '#gboyButton',function(event) {
             title.appendTo(tRow);
 
 
-            if (results[i].cover?.url === undefined) {
+            if (coverimage.url === undefined) {
                 source = 'homestaymatch.com/images/no-image-available.png';
             }
 
             else {
-                source = String(results[i].cover?.url);
+                source = String(coverimage.url);
             }
                 
             var image = $('<img>');
@@ -931,7 +954,8 @@ $(document).on('click', '#gboyButton',function(event) {
             var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
             rating.appendTo(tRow);
 
-            var releaseDates = $('<th>').text(results[i].release_dates[0]?.human);
+            let rdate = results[i].release_dates[0];
+            var releaseDates = $('<th>').text(rdate.human);
             releaseDates.appendTo(tRow);
 
             var mcBut = $('<button>More Info</button>');
@@ -951,16 +975,18 @@ $(document).on('click', '#gboyButton',function(event) {
             }
             
             if (results[i].genres != undefined || results[i].genres != null) {
-                var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
+                let mcGen = results[i].genres[0];
+                var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
                 mcGenres.appendTo(mcBox);
             }
-
-          
+            
+            
             for (y = 0; y < 3; y++) {
               if (results[i].screenshots != undefined) {
-                if (results[i].screenshots[y]?.url != undefined || results[i].screenshots[y]?.url != null) {
+                let mcScreenSource = results[i].screenshots[y];
+                let mcSource = mcScreenSource.url;
+                if (mcScreenSource.url != undefined || mcScreenSource.url != null) {
                   var mcPic = $('<img>');
-                  mcSource = results[i].screenshots[y]?.url;
                   mcPic.attr("src", "https://" + mcSource);
                   mcPic.appendTo(mcBox);
                   mcPic.addClass('screenshots');
@@ -992,7 +1018,7 @@ $(document).on('click', '#gboyButton',function(event) {
 // NES BUTTON API PULL AND DOM CREATION
 
 $(document).on('click', '#nesButton',function(event) {
-  event.preventDefault();
+   
 
     var queryURL = "https://api-v3.igdb.com/games";
 
@@ -1009,7 +1035,7 @@ $(document).on('click', '#nesButton',function(event) {
 
       .then(function(response) {
         var results = response;
-        coverimage = response.cover
+        coverimage = results[i].cover
         console.log(response);
 
         var table = $('#results');
@@ -1025,12 +1051,12 @@ $(document).on('click', '#nesButton',function(event) {
             title.appendTo(tRow);
 
 
-            if (results[i].cover?.url === undefined) {
+            if (coverimage.url === undefined) {
                 source = 'homestaymatch.com/images/no-image-available.png';
             }
 
             else {
-                source = String(results[i].cover?.url);
+                source = String(coverimage.url);
             }
                 
             var image = $('<img>');
@@ -1040,7 +1066,8 @@ $(document).on('click', '#nesButton',function(event) {
             var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
             rating.appendTo(tRow);
 
-            var releaseDates = $('<th>').text(results[i].release_dates[0]?.human);
+            let rdate = results[i].release_dates[0];
+            var releaseDates = $('<th>').text(rdate.human);
             releaseDates.appendTo(tRow);
 
             var mcBut = $('<button>More Info</button>');
@@ -1060,16 +1087,18 @@ $(document).on('click', '#nesButton',function(event) {
             }
             
             if (results[i].genres != undefined || results[i].genres != null) {
-                var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
+                let mcGen = results[i].genres[0];
+                var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
                 mcGenres.appendTo(mcBox);
             }
-
-          
+            
+            
             for (y = 0; y < 3; y++) {
               if (results[i].screenshots != undefined) {
-                if (results[i].screenshots[y]?.url != undefined || results[i].screenshots[y]?.url != null) {
+                let mcScreenSource = results[i].screenshots[y];
+                let mcSource = mcScreenSource.url;
+                if (mcScreenSource.url != undefined || mcScreenSource.url != null) {
                   var mcPic = $('<img>');
-                  mcSource = results[i].screenshots[y]?.url;
                   mcPic.attr("src", "https://" + mcSource);
                   mcPic.appendTo(mcBox);
                   mcPic.addClass('screenshots');
@@ -1101,7 +1130,7 @@ $(document).on('click', '#nesButton',function(event) {
 // SEARCH INPUT API PULL AND DOM CREATION FOR TITLE
 
 $(document).on('click', '#sTitleButton',function(event) {
-  event.preventDefault();
+   
     var nameinput = String($('#nameInput').val().substr(0,1).toUpperCase() + String($('#nameInput').val().substr(1).toLowerCase()));
     var queryURL = "http://www.gamespot.com/api/games/?api_key=0e27e3e25c2d1e2fdf52fae8191317b1730d9589&format=json&filter=name:" + nameinput;
     
@@ -1194,7 +1223,7 @@ $(document).on('click', '#sTitleButton',function(event) {
 // SEARCH INPUT API PULL AND DOM CREATION FOR GENRE
 
 $(document).on('click', '#sGPbutton',function(event) {
-  event.preventDefault();
+   
 
     var queryURL = "https://api-v3.igdb.com/games";
     
@@ -1256,12 +1285,12 @@ $(document).on('click', '#sGPbutton',function(event) {
             title.appendTo(tRow);
 
 
-            if (results[i].cover?.url === undefined) {
+            if (coverimage.url === undefined) {
                 source = 'homestaymatch.com/images/no-image-available.png';
             }
 
             else {
-                source = String(results[i].cover?.url);
+                source = String(coverimage.url);
             }
                 
             var image = $('<img>');
@@ -1295,16 +1324,18 @@ $(document).on('click', '#sGPbutton',function(event) {
             }
             
             if (results[i].genres != undefined || results[i].genres != null) {
-                var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
+                let mcGen = results[i].genres[0];
+                var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
                 mcGenres.appendTo(mcBox);
             }
-
-          
+            
+            
             for (y = 0; y < 3; y++) {
               if (results[i].screenshots != undefined) {
-                if (results[i].screenshots[y]?.url != undefined || results[i].screenshots[y]?.url != null) {
+                let mcScreenSource = results[i].screenshots[y];
+                let mcSource = mcScreenSource.url;
+                if (mcScreenSource.url != undefined || mcScreenSource.url != null) {
                   var mcPic = $('<img>');
-                  mcSource = results[i].screenshots[y]?.url;
                   mcPic.attr("src", "https://" + mcSource);
                   mcPic.appendTo(mcBox);
                   mcPic.addClass('screenshots');
@@ -1357,7 +1388,7 @@ $(document).on('click', '#sGPbutton',function(event) {
 var tBody = $('tbody');
 
 $(document).on('click', '#oneupBlock',function(event) {
-  event.preventDefault();
+   
     tBody.empty();
     counter = parseInt(localStorage.getItem('counter')) + 1;
     // Generating Loop
@@ -1380,7 +1411,7 @@ $(document).on('click', '#oneupBlock',function(event) {
 
 var clearShroom = $('#poison');
 $(document).on('click', '#poison',function(event) {
-      event.preventDefault();
+       
       localStorage.clear();
       $(this).animate({
         width: 'toggle',
