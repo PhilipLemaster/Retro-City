@@ -126,7 +126,7 @@ $(document).on('click', '#genButton',function(event) {
 // N64 BUTTON API PULL AND DOM CREATION
 
 $(document).on('click', '#n64Button',function(event) {
-   
+     
 
     var queryURL = "https://api-v3.igdb.com/games";
 
@@ -143,7 +143,6 @@ $(document).on('click', '#n64Button',function(event) {
 
       .then(function(response) {
         var results = response;
-        coverimage = results[i].cover
         console.log(response);
 
         var table = $('#results');
@@ -152,6 +151,7 @@ $(document).on('click', '#n64Button',function(event) {
 
         for (var i = 0; i < 50; i++) {
             // Variables for main table
+            coverimage = results[i].cover
             var tRow = $('<tr>');
             tRow.appendTo(tBody);
 
@@ -159,7 +159,7 @@ $(document).on('click', '#n64Button',function(event) {
             title.appendTo(tRow);
 
 
-            if (coverimage.url === undefined) {
+            if (coverimage === undefined) {
                 source = 'homestaymatch.com/images/no-image-available.png';
             }
 
@@ -193,7 +193,7 @@ $(document).on('click', '#n64Button',function(event) {
               var mcSummary = $('<p>').text(results[i].summary);
               mcSummary.appendTo(mcBox);
             }
-            
+
             if (results[i].genres != undefined || results[i].genres != null) {
                 let mcGen = results[i].genres[0];
                 var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
@@ -204,8 +204,8 @@ $(document).on('click', '#n64Button',function(event) {
             for (y = 0; y < 3; y++) {
               if (results[i].screenshots != undefined) {
                 let mcScreenSource = results[i].screenshots[y];
-                let mcSource = mcScreenSource.url;
-                if (mcScreenSource.url != undefined || mcScreenSource.url != null) {
+                if (mcScreenSource != undefined || mcScreenSource != null) {
+                  let mcSource = mcScreenSource.url;
                   var mcPic = $('<img>');
                   mcPic.attr("src", "https://" + mcSource);
                   mcPic.appendTo(mcBox);
@@ -218,12 +218,12 @@ $(document).on('click', '#n64Button',function(event) {
             
 
             mcBut.on('click', (function(event){
-              console.log('sup');
-              $(this).nextAll().toggle();
-              })
+                console.log('sup');
+                $(this).nextAll().toggle();
+            })
 
-          
-          )}
+            
+            )}
       });
 
       
@@ -238,108 +238,108 @@ $(document).on('click', '#n64Button',function(event) {
 // XBOX BUTTON API PULL AND DOM CREATION
 
 $(document).on('click', '#xButton',function(event) {
-   
+     
 
-    var queryURL = "https://api-v3.igdb.com/games";
+  var queryURL = "https://api-v3.igdb.com/games";
 
-    $.ajax({
-      url: queryURL,
-      method: "POST",
-      headers: {
-          'user-key' : 'f13f3ae70c0329eaf198249bba188dbd',
-          'Accept' : 'Application/JSON'
-      }, 
+  $.ajax({
+    url: queryURL,
+    method: "POST",
+    headers: {
+        'user-key' : 'f13f3ae70c0329eaf198249bba188dbd',
+        'Accept' : 'Application/JSON'
+    }, 
 
-      data : 'fields name,total_rating,cover.url,release_dates.human,platforms.name,summary,genres.name,screenshots.url; where platforms = 11 ; sort popularity desc; limit 50;'
-      })
+    data : 'fields name,total_rating,cover.url,release_dates.human,platforms.name,summary,genres.name,screenshots.url; where platforms = 11 ; sort popularity desc; limit 50;'
+    })
 
-      .then(function(response) {
-        var results = response;
-        coverimage = results[i].cover
-        console.log(response);
+    .then(function(response) {
+      var results = response;
+      console.log(response);
 
-        var table = $('#results');
-        var tBody = $('tbody');
-        tBody.empty();      
+      var table = $('#results');
+      var tBody = $('tbody');
+      tBody.empty();      
 
-        for (var i = 0; i < 50; i++) {
-            // Variables for main table
-            var tRow = $('<tr>');
-            tRow.appendTo(tBody);
+      for (var i = 0; i < 50; i++) {
+          // Variables for main table
+          coverimage = results[i].cover
+          var tRow = $('<tr>');
+          tRow.appendTo(tBody);
 
-            var title = $('<th>').text(results[i].name);
-            title.appendTo(tRow);
+          var title = $('<th>').text(results[i].name);
+          title.appendTo(tRow);
 
 
-            if (coverimage.url === undefined) {
-                source = 'homestaymatch.com/images/no-image-available.png';
-            }
+          if (coverimage === undefined) {
+              source = 'homestaymatch.com/images/no-image-available.png';
+          }
 
-            else {
-                source = String(coverimage.url);
-            }
-                
-            var image = $('<img>');
-            image.attr("src", "https://" + source);
-            image.appendTo(tRow);
+          else {
+              source = String(coverimage.url);
+          }
+              
+          var image = $('<img>');
+          image.attr("src", "https://" + source);
+          image.appendTo(tRow);
 
-            var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
-            rating.appendTo(tRow);
+          var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
+          rating.appendTo(tRow);
 
-            let rdate = results[i].release_dates[0];
-            var releaseDates = $('<th>').text(rdate.human);
-            releaseDates.appendTo(tRow);
+          let rdate = results[i].release_dates[0];
+          var releaseDates = $('<th>').text(rdate.human);
+          releaseDates.appendTo(tRow);
 
-            var mcBut = $('<button>More Info</button>');
-            $(mcBut).addClass('clear button warning').attr('data-open', 'moreContent');
-            mcBut.appendTo(tRow);
+          var mcBut = $('<button>More Info</button>');
+          $(mcBut).addClass('clear button warning').attr('data-open', 'moreContent');
+          mcBut.appendTo(tRow);
 
-            // Create mcBox and dynamically hide/show
-            
-            var mcBox = $('<div>').appendTo(tRow);
-            mcBox.hide();
-            var mcTitle = $('<h4>').text(results[i].name);
-            mcTitle.appendTo(mcBox);
-            
-            if (results[i].summary != undefined || results[i].summary != null) {
-              var mcSummary = $('<p>').text(results[i].summary);
-              mcSummary.appendTo(mcBox);
-            }
-            
-            if (results[i].genres != undefined || results[i].genres != null) {
-                let mcGen = results[i].genres[0];
-                var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
-                mcGenres.appendTo(mcBox);
-            }
-            
-            
-            for (y = 0; y < 3; y++) {
-              if (results[i].screenshots != undefined) {
-                let mcScreenSource = results[i].screenshots[y];
+          // Create mcBox and dynamically hide/show
+          
+          var mcBox = $('<div>').appendTo(tRow);
+          mcBox.hide();
+          var mcTitle = $('<h4>').text(results[i].name);
+          mcTitle.appendTo(mcBox);
+          
+          if (results[i].summary != undefined || results[i].summary != null) {
+            var mcSummary = $('<p>').text(results[i].summary);
+            mcSummary.appendTo(mcBox);
+          }
+
+          if (results[i].genres != undefined || results[i].genres != null) {
+              let mcGen = results[i].genres[0];
+              var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
+              mcGenres.appendTo(mcBox);
+          }
+          
+          
+          for (y = 0; y < 3; y++) {
+            if (results[i].screenshots != undefined) {
+              let mcScreenSource = results[i].screenshots[y];
+              if (mcScreenSource != undefined || mcScreenSource != null) {
                 let mcSource = mcScreenSource.url;
-                if (mcScreenSource.url != undefined || mcScreenSource.url != null) {
-                  var mcPic = $('<img>');
-                  mcPic.attr("src", "https://" + mcSource);
-                  mcPic.appendTo(mcBox);
-                  mcPic.addClass('screenshots');
-                }
+                var mcPic = $('<img>');
+                mcPic.attr("src", "https://" + mcSource);
+                mcPic.appendTo(mcBox);
+                mcPic.addClass('screenshots');
               }
-                
-                
             }
-            
+              
+              
+          }
+          
 
-            mcBut.on('click', (function(event){
+          mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
-              })
+          })
 
           
           )}
-      });
+    });
 
-      
-  });
+    
+});
 
   jQuery.ajaxPrefilter(function(options) {
     if (options.crossDomain && jQuery.support.cors) {
@@ -350,105 +350,108 @@ $(document).on('click', '#xButton',function(event) {
 // PS1 BUTTON API PULL AND DOM CREATION
 
 $(document).on('click', '#ps1Button',function(event) {
-   
+     
 
-    var queryURL = "https://api-v3.igdb.com/games";
+  var queryURL = "https://api-v3.igdb.com/games";
 
-    $.ajax({
-      url: queryURL,
-      method: "POST",
-      headers: {
-          'user-key' : 'f13f3ae70c0329eaf198249bba188dbd',
-          'Accept' : 'Application/JSON'
-      }, 
+  $.ajax({
+    url: queryURL,
+    method: "POST",
+    headers: {
+        'user-key' : 'f13f3ae70c0329eaf198249bba188dbd',
+        'Accept' : 'Application/JSON'
+    }, 
 
-      data : 'fields name,total_rating,cover.url,release_dates.human,platforms.name,summary,genres.name,screenshots.url; where platforms = 7 ; sort popularity desc; limit 50;'
-      })
+    data : 'fields name,total_rating,cover.url,release_dates.human,platforms.name,summary,genres.name,screenshots.url; where platforms = 7 ; sort popularity desc; limit 50;'
+    })
 
-      .then(function(response) {
-        var results = response;
-        coverimage = results[i].cover
-        console.log(response);
+    .then(function(response) {
+      var results = response;
+      console.log(response);
 
-        var table = $('#results');
-        var tBody = $('tbody');
-        tBody.empty();      
+      var table = $('#results');
+      var tBody = $('tbody');
+      tBody.empty();      
 
-        for (var i = 0; i < 50; i++) {
-            // Variables for main table
-            var tRow = $('<tr>');
-            tRow.appendTo(tBody);
+      for (var i = 0; i < 50; i++) {
+          // Variables for main table
+          coverimage = results[i].cover
+          var tRow = $('<tr>');
+          tRow.appendTo(tBody);
 
-            var title = $('<th>').text(results[i].name);
-            title.appendTo(tRow);
+          var title = $('<th>').text(results[i].name);
+          title.appendTo(tRow);
 
 
-            if (coverimage.url === undefined) {
-                source = 'homestaymatch.com/images/no-image-available.png';
-            }
+          if (coverimage === undefined) {
+              source = 'homestaymatch.com/images/no-image-available.png';
+          }
 
-            else {
-                source = String(coverimage.url);
-            }
-                
-            var image = $('<img>');
-            image.attr("src", "https://" + source);
-            image.appendTo(tRow);
+          else {
+              source = String(coverimage.url);
+          }
+              
+          var image = $('<img>');
+          image.attr("src", "https://" + source);
+          image.appendTo(tRow);
 
-            var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
-            rating.appendTo(tRow);
+          var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
+          rating.appendTo(tRow);
 
-            let rdate = results[i].release_dates[0];
-            var releaseDates = $('<th>').text(rdate.human);
-            releaseDates.appendTo(tRow);
+          let rdate = results[i].release_dates[0];
+          var releaseDates = $('<th>').text(rdate.human);
+          releaseDates.appendTo(tRow);
 
-            var mcBut = $('<button>More Info</button>');
-            $(mcBut).addClass('clear button warning').attr('data-open', 'moreContent');
-            mcBut.appendTo(tRow);
+          var mcBut = $('<button>More Info</button>');
+          $(mcBut).addClass('clear button warning').attr('data-open', 'moreContent');
+          mcBut.appendTo(tRow);
 
-            // Create mcBox and dynamically hide/show
-            
-            var mcBox = $('<div>').appendTo(tRow);
-            mcBox.hide();
-            var mcTitle = $('<h4>').text(results[i].name);
-            mcTitle.appendTo(mcBox);
-            
-            if (results[i].summary != undefined || results[i].summary != null) {
-              var mcSummary = $('<p>').text(results[i].summary);
-              mcSummary.appendTo(mcBox);
-            }
-            
-            if (results[i].genres != undefined || results[i].genres != null) {
-                var mcGenres = $('<p>').text('Genre: ' + results[i].genres[0]?.name);
-                mcGenres.appendTo(mcBox);
-            }
+          // Create mcBox and dynamically hide/show
           
-            for (y = 0; y < 3; y++) {
-              if (results[i].screenshots != undefined) {
-                if (results[i].screenshots[y]?.url != undefined || results[i].screenshots[y]?.url != null) {
-                  var mcPic = $('<img>');
-                  mcSource = results[i].screenshots[y]?.url;
-                  mcPic.attr("src", "https://" + mcSource);
-                  mcPic.appendTo(mcBox);
-                  mcPic.addClass('screenshots');
-                }
-              }
-                
-                
-            }
-            
+          var mcBox = $('<div>').appendTo(tRow);
+          mcBox.hide();
+          var mcTitle = $('<h4>').text(results[i].name);
+          mcTitle.appendTo(mcBox);
+          
+          if (results[i].summary != undefined || results[i].summary != null) {
+            var mcSummary = $('<p>').text(results[i].summary);
+            mcSummary.appendTo(mcBox);
+          }
 
-            mcBut.on('click', (function(event){
+          if (results[i].genres != undefined || results[i].genres != null) {
+              let mcGen = results[i].genres[0];
+              var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
+              mcGenres.appendTo(mcBox);
+          }
+          
+          
+          for (y = 0; y < 3; y++) {
+            if (results[i].screenshots != undefined) {
+              let mcScreenSource = results[i].screenshots[y];
+              if (mcScreenSource != undefined || mcScreenSource != null) {
+                let mcSource = mcScreenSource.url;
+                var mcPic = $('<img>');
+                mcPic.attr("src", "https://" + mcSource);
+                mcPic.appendTo(mcBox);
+                mcPic.addClass('screenshots');
+              }
+            }
+              
+              
+          }
+          
+
+          mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
-              })
+          })
 
           
           )}
-      });
+    });
 
-      
-  });
+    
+});
 
   jQuery.ajaxPrefilter(function(options) {
     if (options.crossDomain && jQuery.support.cors) {
@@ -459,107 +462,108 @@ $(document).on('click', '#ps1Button',function(event) {
 // SNES BUTTON API PULL AND DOM CREATION
 
 $(document).on('click', '#snesButton',function(event) {
-   
-    var queryURL = "https://api-v3.igdb.com/games";
+     
 
-    $.ajax({
-      url: queryURL,
-      method: "POST",
-      headers: {
-          'user-key' : 'f13f3ae70c0329eaf198249bba188dbd',
-          'Accept' : 'Application/JSON'
-      }, 
+  var queryURL = "https://api-v3.igdb.com/games";
 
-      data : 'fields name,total_rating,cover.url,release_dates.human,platforms.name,summary,genres.name,screenshots.url; where platforms = 19 ; sort popularity desc; limit 50;'
-      })
+  $.ajax({
+    url: queryURL,
+    method: "POST",
+    headers: {
+        'user-key' : 'f13f3ae70c0329eaf198249bba188dbd',
+        'Accept' : 'Application/JSON'
+    }, 
 
-      .then(function(response) {
-        var results = response;
-        coverimage = results[i].cover
-        console.log(response);
+    data : 'fields name,total_rating,cover.url,release_dates.human,platforms.name,summary,genres.name,screenshots.url; where platforms = 19 ; sort popularity desc; limit 50;'
+    })
 
-        var table = $('#results');
-        var tBody = $('tbody');
-        tBody.empty();      
+    .then(function(response) {
+      var results = response;
+      console.log(response);
 
-        for (var i = 0; i < 50; i++) {
-            // Variables for main table
-            var tRow = $('<tr>');
-            tRow.appendTo(tBody);
+      var table = $('#results');
+      var tBody = $('tbody');
+      tBody.empty();      
 
-            var title = $('<th>').text(results[i].name);
-            title.appendTo(tRow);
+      for (var i = 0; i < 50; i++) {
+          // Variables for main table
+          coverimage = results[i].cover
+          var tRow = $('<tr>');
+          tRow.appendTo(tBody);
+
+          var title = $('<th>').text(results[i].name);
+          title.appendTo(tRow);
 
 
-            if (coverimage.url === undefined) {
-                source = 'homestaymatch.com/images/no-image-available.png';
-            }
+          if (coverimage === undefined) {
+              source = 'homestaymatch.com/images/no-image-available.png';
+          }
 
-            else {
-                source = String(coverimage.url);
-            }
-                
-            var image = $('<img>');
-            image.attr("src", "https://" + source);
-            image.appendTo(tRow);
+          else {
+              source = String(coverimage.url);
+          }
+              
+          var image = $('<img>');
+          image.attr("src", "https://" + source);
+          image.appendTo(tRow);
 
-            var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
-            rating.appendTo(tRow);
+          var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
+          rating.appendTo(tRow);
 
-            let rdate = results[i].release_dates[0];
-            var releaseDates = $('<th>').text(rdate.human);
-            releaseDates.appendTo(tRow);
+          let rdate = results[i].release_dates[0];
+          var releaseDates = $('<th>').text(rdate.human);
+          releaseDates.appendTo(tRow);
 
-            var mcBut = $('<button>More Info</button>');
-            $(mcBut).addClass('clear button warning').attr('data-open', 'moreContent');
-            mcBut.appendTo(tRow);
+          var mcBut = $('<button>More Info</button>');
+          $(mcBut).addClass('clear button warning').attr('data-open', 'moreContent');
+          mcBut.appendTo(tRow);
 
-            // Create mcBox and dynamically hide/show
-            
-            var mcBox = $('<div>').appendTo(tRow);
-            mcBox.hide();
-            var mcTitle = $('<h4>').text(results[i].name);
-            mcTitle.appendTo(mcBox);
-            
-            if (results[i].summary != undefined || results[i].summary != null) {
-              var mcSummary = $('<p>').text(results[i].summary);
-              mcSummary.appendTo(mcBox);
-            }
-            
-            if (results[i].genres != undefined || results[i].genres != null) {
-                let mcGen = results[i].genres[0];
-                var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
-                mcGenres.appendTo(mcBox);
-            }
-            
-            
-            for (y = 0; y < 3; y++) {
-              if (results[i].screenshots != undefined) {
-                let mcScreenSource = results[i].screenshots[y];
+          // Create mcBox and dynamically hide/show
+          
+          var mcBox = $('<div>').appendTo(tRow);
+          mcBox.hide();
+          var mcTitle = $('<h4>').text(results[i].name);
+          mcTitle.appendTo(mcBox);
+          
+          if (results[i].summary != undefined || results[i].summary != null) {
+            var mcSummary = $('<p>').text(results[i].summary);
+            mcSummary.appendTo(mcBox);
+          }
+
+          if (results[i].genres != undefined || results[i].genres != null) {
+              let mcGen = results[i].genres[0];
+              var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
+              mcGenres.appendTo(mcBox);
+          }
+          
+          
+          for (y = 0; y < 3; y++) {
+            if (results[i].screenshots != undefined) {
+              let mcScreenSource = results[i].screenshots[y];
+              if (mcScreenSource != undefined || mcScreenSource != null) {
                 let mcSource = mcScreenSource.url;
-                if (mcScreenSource.url != undefined || mcScreenSource.url != null) {
-                  var mcPic = $('<img>');
-                  mcPic.attr("src", "https://" + mcSource);
-                  mcPic.appendTo(mcBox);
-                  mcPic.addClass('screenshots');
-                }
+                var mcPic = $('<img>');
+                mcPic.attr("src", "https://" + mcSource);
+                mcPic.appendTo(mcBox);
+                mcPic.addClass('screenshots');
               }
-                
-                
             }
-            
+              
+              
+          }
+          
 
-            mcBut.on('click', (function(event){
+          mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
-              })
+          })
 
           
           )}
-      });
+    });
 
-      
-  });
+    
+});
 
   jQuery.ajaxPrefilter(function(options) {
     if (options.crossDomain && jQuery.support.cors) {
@@ -570,108 +574,108 @@ $(document).on('click', '#snesButton',function(event) {
 // ATARI BUTTON API PULL AND DOM CREATION
 
 $(document).on('click', '#atariButton',function(event) {
-   
+     
 
-    var queryURL = "https://api-v3.igdb.com/games";
+  var queryURL = "https://api-v3.igdb.com/games";
 
-    $.ajax({
-      url: queryURL,
-      method: "POST",
-      headers: {
-          'user-key' : 'f13f3ae70c0329eaf198249bba188dbd',
-          'Accept' : 'Application/JSON'
-      }, 
+  $.ajax({
+    url: queryURL,
+    method: "POST",
+    headers: {
+        'user-key' : 'f13f3ae70c0329eaf198249bba188dbd',
+        'Accept' : 'Application/JSON'
+    }, 
 
-      data : 'fields name,total_rating,cover.url,release_dates.human,platforms.name,summary,genres.name,screenshots.url; where platforms = 59 ; sort popularity desc; limit 50;'
-      })
+    data : 'fields name,total_rating,cover.url,release_dates.human,platforms.name,summary,genres.name,screenshots.url; where platforms = 59 ; sort popularity desc; limit 50;'
+    })
 
-      .then(function(response) {
-        var results = response;
-        coverimage = results[i].cover
-        console.log(response);
+    .then(function(response) {
+      var results = response;
+      console.log(response);
 
-        var table = $('#results');
-        var tBody = $('tbody');
-        tBody.empty();      
+      var table = $('#results');
+      var tBody = $('tbody');
+      tBody.empty();      
 
-        for (var i = 0; i < 50; i++) {
-            // Variables for main table
-            var tRow = $('<tr>');
-            tRow.appendTo(tBody);
+      for (var i = 0; i < 50; i++) {
+          // Variables for main table
+          coverimage = results[i].cover
+          var tRow = $('<tr>');
+          tRow.appendTo(tBody);
 
-            var title = $('<th>').text(results[i].name);
-            title.appendTo(tRow);
+          var title = $('<th>').text(results[i].name);
+          title.appendTo(tRow);
 
 
-            if (coverimage.url === undefined) {
-                source = 'homestaymatch.com/images/no-image-available.png';
-            }
+          if (coverimage === undefined) {
+              source = 'homestaymatch.com/images/no-image-available.png';
+          }
 
-            else {
-                source = String(coverimage.url);
-            }
-                
-            var image = $('<img>');
-            image.attr("src", "https://" + source);
-            image.appendTo(tRow);
+          else {
+              source = String(coverimage.url);
+          }
+              
+          var image = $('<img>');
+          image.attr("src", "https://" + source);
+          image.appendTo(tRow);
 
-            var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
-            rating.appendTo(tRow);
+          var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
+          rating.appendTo(tRow);
 
-            let rdate = results[i].release_dates[0];
-            var releaseDates = $('<th>').text(rdate.human);
-            releaseDates.appendTo(tRow);
+          let rdate = results[i].release_dates[0];
+          var releaseDates = $('<th>').text(rdate.human);
+          releaseDates.appendTo(tRow);
 
-            var mcBut = $('<button>More Info</button>');
-            $(mcBut).addClass('clear button warning').attr('data-open', 'moreContent');
-            mcBut.appendTo(tRow);
+          var mcBut = $('<button>More Info</button>');
+          $(mcBut).addClass('clear button warning').attr('data-open', 'moreContent');
+          mcBut.appendTo(tRow);
 
-            // Create mcBox and dynamically hide/show
-            
-            var mcBox = $('<div>').appendTo(tRow);
-            mcBox.hide();
-            var mcTitle = $('<h4>').text(results[i].name);
-            mcTitle.appendTo(mcBox);
-            
-            if (results[i].summary != undefined || results[i].summary != null) {
-              var mcSummary = $('<p>').text(results[i].summary);
-              mcSummary.appendTo(mcBox);
-            }
-            
-            if (results[i].genres != undefined || results[i].genres != null) {
-                let mcGen = results[i].genres[0];
-                var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
-                mcGenres.appendTo(mcBox);
-            }
-            
-            
-            for (y = 0; y < 3; y++) {
-              if (results[i].screenshots != undefined) {
-                let mcScreenSource = results[i].screenshots[y];
+          // Create mcBox and dynamically hide/show
+          
+          var mcBox = $('<div>').appendTo(tRow);
+          mcBox.hide();
+          var mcTitle = $('<h4>').text(results[i].name);
+          mcTitle.appendTo(mcBox);
+          
+          if (results[i].summary != undefined || results[i].summary != null) {
+            var mcSummary = $('<p>').text(results[i].summary);
+            mcSummary.appendTo(mcBox);
+          }
+
+          if (results[i].genres != undefined || results[i].genres != null) {
+              let mcGen = results[i].genres[0];
+              var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
+              mcGenres.appendTo(mcBox);
+          }
+          
+          
+          for (y = 0; y < 3; y++) {
+            if (results[i].screenshots != undefined) {
+              let mcScreenSource = results[i].screenshots[y];
+              if (mcScreenSource != undefined || mcScreenSource != null) {
                 let mcSource = mcScreenSource.url;
-                if (mcScreenSource.url != undefined || mcScreenSource.url != null) {
-                  var mcPic = $('<img>');
-                  mcPic.attr("src", "https://" + mcSource);
-                  mcPic.appendTo(mcBox);
-                  mcPic.addClass('screenshots');
-                }
+                var mcPic = $('<img>');
+                mcPic.attr("src", "https://" + mcSource);
+                mcPic.appendTo(mcBox);
+                mcPic.addClass('screenshots');
               }
-                
-                
             }
-            
+              
+              
+          }
+          
 
-            mcBut.on('click', (function(event){
+          mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
-              })
+          })
 
           
           )}
-      });
+    });
 
-      
-  });
+    
+});
 
   jQuery.ajaxPrefilter(function(options) {
     if (options.crossDomain && jQuery.support.cors) {
@@ -682,108 +686,108 @@ $(document).on('click', '#atariButton',function(event) {
 // GAMECUBE BUTTON API PULL AND DOM CREATION
 
 $(document).on('click', '#gcButton',function(event) {
-   
+     
 
-    var queryURL = "https://api-v3.igdb.com/games";
+  var queryURL = "https://api-v3.igdb.com/games";
 
-    $.ajax({
-      url: queryURL,
-      method: "POST",
-      headers: {
-          'user-key' : 'f13f3ae70c0329eaf198249bba188dbd',
-          'Accept' : 'Application/JSON'
-      }, 
+  $.ajax({
+    url: queryURL,
+    method: "POST",
+    headers: {
+        'user-key' : 'f13f3ae70c0329eaf198249bba188dbd',
+        'Accept' : 'Application/JSON'
+    }, 
 
-      data : 'fields name,total_rating,cover.url,release_dates.human,platforms.name,summary,genres.name,screenshots.url; where platforms = 21 ; sort popularity desc; limit 50;'
-      })
+    data : 'fields name,total_rating,cover.url,release_dates.human,platforms.name,summary,genres.name,screenshots.url; where platforms = 21 ; sort popularity desc; limit 50;'
+    })
 
-      .then(function(response) {
-        var results = response;
-        coverimage = results[i].cover
-        console.log(response);
+    .then(function(response) {
+      var results = response;
+      console.log(response);
 
-        var table = $('#results');
-        var tBody = $('tbody');
-        tBody.empty();      
+      var table = $('#results');
+      var tBody = $('tbody');
+      tBody.empty();      
 
-        for (var i = 0; i < 50; i++) {
-            // Variables for main table
-            var tRow = $('<tr>');
-            tRow.appendTo(tBody);
+      for (var i = 0; i < 50; i++) {
+          // Variables for main table
+          coverimage = results[i].cover
+          var tRow = $('<tr>');
+          tRow.appendTo(tBody);
 
-            var title = $('<th>').text(results[i].name);
-            title.appendTo(tRow);
+          var title = $('<th>').text(results[i].name);
+          title.appendTo(tRow);
 
 
-            if (coverimage.url === undefined) {
-                source = 'homestaymatch.com/images/no-image-available.png';
-            }
+          if (coverimage === undefined) {
+              source = 'homestaymatch.com/images/no-image-available.png';
+          }
 
-            else {
-                source = String(coverimage.url);
-            }
-                
-            var image = $('<img>');
-            image.attr("src", "https://" + source);
-            image.appendTo(tRow);
+          else {
+              source = String(coverimage.url);
+          }
+              
+          var image = $('<img>');
+          image.attr("src", "https://" + source);
+          image.appendTo(tRow);
 
-            var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
-            rating.appendTo(tRow);
+          var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
+          rating.appendTo(tRow);
 
-            let rdate = results[i].release_dates[0];
-            var releaseDates = $('<th>').text(rdate.human);
-            releaseDates.appendTo(tRow);
+          let rdate = results[i].release_dates[0];
+          var releaseDates = $('<th>').text(rdate.human);
+          releaseDates.appendTo(tRow);
 
-            var mcBut = $('<button>More Info</button>');
-            $(mcBut).addClass('clear button warning').attr('data-open', 'moreContent');
-            mcBut.appendTo(tRow);
+          var mcBut = $('<button>More Info</button>');
+          $(mcBut).addClass('clear button warning').attr('data-open', 'moreContent');
+          mcBut.appendTo(tRow);
 
-            // Create mcBox and dynamically hide/show
-            
-            var mcBox = $('<div>').appendTo(tRow);
-            mcBox.hide();
-            var mcTitle = $('<h4>').text(results[i].name);
-            mcTitle.appendTo(mcBox);
-            
-            if (results[i].summary != undefined || results[i].summary != null) {
-              var mcSummary = $('<p>').text(results[i].summary);
-              mcSummary.appendTo(mcBox);
-            }
-            
-            if (results[i].genres != undefined || results[i].genres != null) {
-                let mcGen = results[i].genres[0];
-                var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
-                mcGenres.appendTo(mcBox);
-            }
-            
-            
-            for (y = 0; y < 3; y++) {
-              if (results[i].screenshots != undefined) {
-                let mcScreenSource = results[i].screenshots[y];
+          // Create mcBox and dynamically hide/show
+          
+          var mcBox = $('<div>').appendTo(tRow);
+          mcBox.hide();
+          var mcTitle = $('<h4>').text(results[i].name);
+          mcTitle.appendTo(mcBox);
+          
+          if (results[i].summary != undefined || results[i].summary != null) {
+            var mcSummary = $('<p>').text(results[i].summary);
+            mcSummary.appendTo(mcBox);
+          }
+
+          if (results[i].genres != undefined || results[i].genres != null) {
+              let mcGen = results[i].genres[0];
+              var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
+              mcGenres.appendTo(mcBox);
+          }
+          
+          
+          for (y = 0; y < 3; y++) {
+            if (results[i].screenshots != undefined) {
+              let mcScreenSource = results[i].screenshots[y];
+              if (mcScreenSource != undefined || mcScreenSource != null) {
                 let mcSource = mcScreenSource.url;
-                if (mcScreenSource.url != undefined || mcScreenSource.url != null) {
-                  var mcPic = $('<img>');
-                  mcPic.attr("src", "https://" + mcSource);
-                  mcPic.appendTo(mcBox);
-                  mcPic.addClass('screenshots');
-                }
+                var mcPic = $('<img>');
+                mcPic.attr("src", "https://" + mcSource);
+                mcPic.appendTo(mcBox);
+                mcPic.addClass('screenshots');
               }
-                
-                
             }
-            
+              
+              
+          }
+          
 
-            mcBut.on('click', (function(event){
+          mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
-              })
+          })
 
           
           )}
-      });
+    });
 
-      
-  });
+    
+});
 
   jQuery.ajaxPrefilter(function(options) {
     if (options.crossDomain && jQuery.support.cors) {
@@ -794,108 +798,108 @@ $(document).on('click', '#gcButton',function(event) {
 // DREAMCAST BUTTON API PULL AND DOM CREATION
 
 $(document).on('click', '#dreamButton',function(event) {
-   
+     
 
-    var queryURL = "https://api-v3.igdb.com/games";
+  var queryURL = "https://api-v3.igdb.com/games";
 
-    $.ajax({
-      url: queryURL,
-      method: "POST",
-      headers: {
-          'user-key' : 'f13f3ae70c0329eaf198249bba188dbd',
-          'Accept' : 'Application/JSON'
-      }, 
+  $.ajax({
+    url: queryURL,
+    method: "POST",
+    headers: {
+        'user-key' : 'f13f3ae70c0329eaf198249bba188dbd',
+        'Accept' : 'Application/JSON'
+    }, 
 
-      data : 'fields name,total_rating,cover.url,release_dates.human,platforms.name,summary,genres.name,screenshots.url; where platforms = 23 ; sort popularity desc; limit 50;'
-      })
+    data : 'fields name,total_rating,cover.url,release_dates.human,platforms.name,summary,genres.name,screenshots.url; where platforms = 23 ; sort popularity desc; limit 50;'
+    })
 
-      .then(function(response) {
-        var results = response;
-        coverimage = results[i].cover
-        console.log(response);
+    .then(function(response) {
+      var results = response;
+      console.log(response);
 
-        var table = $('#results');
-        var tBody = $('tbody');
-        tBody.empty();      
+      var table = $('#results');
+      var tBody = $('tbody');
+      tBody.empty();      
 
-        for (var i = 0; i < 50; i++) {
-            // Variables for main table
-            var tRow = $('<tr>');
-            tRow.appendTo(tBody);
+      for (var i = 0; i < 50; i++) {
+          // Variables for main table
+          coverimage = results[i].cover
+          var tRow = $('<tr>');
+          tRow.appendTo(tBody);
 
-            var title = $('<th>').text(results[i].name);
-            title.appendTo(tRow);
+          var title = $('<th>').text(results[i].name);
+          title.appendTo(tRow);
 
 
-            if (coverimage.url === undefined) {
-                source = 'homestaymatch.com/images/no-image-available.png';
-            }
+          if (coverimage === undefined) {
+              source = 'homestaymatch.com/images/no-image-available.png';
+          }
 
-            else {
-                source = String(coverimage.url);
-            }
-                
-            var image = $('<img>');
-            image.attr("src", "https://" + source);
-            image.appendTo(tRow);
+          else {
+              source = String(coverimage.url);
+          }
+              
+          var image = $('<img>');
+          image.attr("src", "https://" + source);
+          image.appendTo(tRow);
 
-            var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
-            rating.appendTo(tRow);
+          var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
+          rating.appendTo(tRow);
 
-            let rdate = results[i].release_dates[0];
-            var releaseDates = $('<th>').text(rdate.human);
-            releaseDates.appendTo(tRow);
+          let rdate = results[i].release_dates[0];
+          var releaseDates = $('<th>').text(rdate.human);
+          releaseDates.appendTo(tRow);
 
-            var mcBut = $('<button>More Info</button>');
-            $(mcBut).addClass('clear button warning').attr('data-open', 'moreContent');
-            mcBut.appendTo(tRow);
+          var mcBut = $('<button>More Info</button>');
+          $(mcBut).addClass('clear button warning').attr('data-open', 'moreContent');
+          mcBut.appendTo(tRow);
 
-            // Create mcBox and dynamically hide/show
-            
-            var mcBox = $('<div>').appendTo(tRow);
-            mcBox.hide();
-            var mcTitle = $('<h4>').text(results[i].name);
-            mcTitle.appendTo(mcBox);
-            
-            if (results[i].summary != undefined || results[i].summary != null) {
-              var mcSummary = $('<p>').text(results[i].summary);
-              mcSummary.appendTo(mcBox);
-            }
-            
-            if (results[i].genres != undefined || results[i].genres != null) {
-                let mcGen = results[i].genres[0];
-                var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
-                mcGenres.appendTo(mcBox);
-            }
-            
-            
-            for (y = 0; y < 3; y++) {
-              if (results[i].screenshots != undefined) {
-                let mcScreenSource = results[i].screenshots[y];
+          // Create mcBox and dynamically hide/show
+          
+          var mcBox = $('<div>').appendTo(tRow);
+          mcBox.hide();
+          var mcTitle = $('<h4>').text(results[i].name);
+          mcTitle.appendTo(mcBox);
+          
+          if (results[i].summary != undefined || results[i].summary != null) {
+            var mcSummary = $('<p>').text(results[i].summary);
+            mcSummary.appendTo(mcBox);
+          }
+
+          if (results[i].genres != undefined || results[i].genres != null) {
+              let mcGen = results[i].genres[0];
+              var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
+              mcGenres.appendTo(mcBox);
+          }
+          
+          
+          for (y = 0; y < 3; y++) {
+            if (results[i].screenshots != undefined) {
+              let mcScreenSource = results[i].screenshots[y];
+              if (mcScreenSource != undefined || mcScreenSource != null) {
                 let mcSource = mcScreenSource.url;
-                if (mcScreenSource.url != undefined || mcScreenSource.url != null) {
-                  var mcPic = $('<img>');
-                  mcPic.attr("src", "https://" + mcSource);
-                  mcPic.appendTo(mcBox);
-                  mcPic.addClass('screenshots');
-                }
+                var mcPic = $('<img>');
+                mcPic.attr("src", "https://" + mcSource);
+                mcPic.appendTo(mcBox);
+                mcPic.addClass('screenshots');
               }
-                
-                
             }
-            
+              
+              
+          }
+          
 
-            mcBut.on('click', (function(event){
+          mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
-              })
+          })
 
           
           )}
-      });
+    });
 
-      
-  });
+    
+});
 
   jQuery.ajaxPrefilter(function(options) {
     if (options.crossDomain && jQuery.support.cors) {
@@ -906,108 +910,108 @@ $(document).on('click', '#dreamButton',function(event) {
 // GAMEBOY BUTTON API PULL AND DOM CREATION
 
 $(document).on('click', '#gboyButton',function(event) {
-   
+     
 
-    var queryURL = "https://api-v3.igdb.com/games";
+  var queryURL = "https://api-v3.igdb.com/games";
 
-    $.ajax({
-      url: queryURL,
-      method: "POST",
-      headers: {
-          'user-key' : 'f13f3ae70c0329eaf198249bba188dbd',
-          'Accept' : 'Application/JSON'
-      }, 
+  $.ajax({
+    url: queryURL,
+    method: "POST",
+    headers: {
+        'user-key' : 'f13f3ae70c0329eaf198249bba188dbd',
+        'Accept' : 'Application/JSON'
+    }, 
 
-      data : 'fields name,total_rating,cover.url,release_dates.human,platforms.name,summary,genres.name,screenshots.url; where platforms = 33 ; sort popularity desc; limit 50;'
-      })
+    data : 'fields name,total_rating,cover.url,release_dates.human,platforms.name,summary,genres.name,screenshots.url; where platforms = 33 ; sort popularity desc; limit 50;'
+    })
 
-      .then(function(response) {
-        var results = response;
-        coverimage = results[i].cover
-        console.log(response);
+    .then(function(response) {
+      var results = response;
+      console.log(response);
 
-        var table = $('#results');
-        var tBody = $('tbody');
-        tBody.empty();      
+      var table = $('#results');
+      var tBody = $('tbody');
+      tBody.empty();      
 
-        for (var i = 0; i < 50; i++) {
-            // Variables for main table
-            var tRow = $('<tr>');
-            tRow.appendTo(tBody);
+      for (var i = 0; i < 50; i++) {
+          // Variables for main table
+          coverimage = results[i].cover
+          var tRow = $('<tr>');
+          tRow.appendTo(tBody);
 
-            var title = $('<th>').text(results[i].name);
-            title.appendTo(tRow);
+          var title = $('<th>').text(results[i].name);
+          title.appendTo(tRow);
 
 
-            if (coverimage.url === undefined) {
-                source = 'homestaymatch.com/images/no-image-available.png';
-            }
+          if (coverimage === undefined) {
+              source = 'homestaymatch.com/images/no-image-available.png';
+          }
 
-            else {
-                source = String(coverimage.url);
-            }
-                
-            var image = $('<img>');
-            image.attr("src", "https://" + source);
-            image.appendTo(tRow);
+          else {
+              source = String(coverimage.url);
+          }
+              
+          var image = $('<img>');
+          image.attr("src", "https://" + source);
+          image.appendTo(tRow);
 
-            var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
-            rating.appendTo(tRow);
+          var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
+          rating.appendTo(tRow);
 
-            let rdate = results[i].release_dates[0];
-            var releaseDates = $('<th>').text(rdate.human);
-            releaseDates.appendTo(tRow);
+          let rdate = results[i].release_dates[0];
+          var releaseDates = $('<th>').text(rdate.human);
+          releaseDates.appendTo(tRow);
 
-            var mcBut = $('<button>More Info</button>');
-            $(mcBut).addClass('clear button warning').attr('data-open', 'moreContent');
-            mcBut.appendTo(tRow);
+          var mcBut = $('<button>More Info</button>');
+          $(mcBut).addClass('clear button warning').attr('data-open', 'moreContent');
+          mcBut.appendTo(tRow);
 
-            // Create mcBox and dynamically hide/show
-            
-            var mcBox = $('<div>').appendTo(tRow);
-            mcBox.hide();
-            var mcTitle = $('<h4>').text(results[i].name);
-            mcTitle.appendTo(mcBox);
-            
-            if (results[i].summary != undefined || results[i].summary != null) {
-              var mcSummary = $('<p>').text(results[i].summary);
-              mcSummary.appendTo(mcBox);
-            }
-            
-            if (results[i].genres != undefined || results[i].genres != null) {
-                let mcGen = results[i].genres[0];
-                var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
-                mcGenres.appendTo(mcBox);
-            }
-            
-            
-            for (y = 0; y < 3; y++) {
-              if (results[i].screenshots != undefined) {
-                let mcScreenSource = results[i].screenshots[y];
+          // Create mcBox and dynamically hide/show
+          
+          var mcBox = $('<div>').appendTo(tRow);
+          mcBox.hide();
+          var mcTitle = $('<h4>').text(results[i].name);
+          mcTitle.appendTo(mcBox);
+          
+          if (results[i].summary != undefined || results[i].summary != null) {
+            var mcSummary = $('<p>').text(results[i].summary);
+            mcSummary.appendTo(mcBox);
+          }
+
+          if (results[i].genres != undefined || results[i].genres != null) {
+              let mcGen = results[i].genres[0];
+              var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
+              mcGenres.appendTo(mcBox);
+          }
+          
+          
+          for (y = 0; y < 3; y++) {
+            if (results[i].screenshots != undefined) {
+              let mcScreenSource = results[i].screenshots[y];
+              if (mcScreenSource != undefined || mcScreenSource != null) {
                 let mcSource = mcScreenSource.url;
-                if (mcScreenSource.url != undefined || mcScreenSource.url != null) {
-                  var mcPic = $('<img>');
-                  mcPic.attr("src", "https://" + mcSource);
-                  mcPic.appendTo(mcBox);
-                  mcPic.addClass('screenshots');
-                }
+                var mcPic = $('<img>');
+                mcPic.attr("src", "https://" + mcSource);
+                mcPic.appendTo(mcBox);
+                mcPic.addClass('screenshots');
               }
-                
-                
             }
-            
+              
+              
+          }
+          
 
-            mcBut.on('click', (function(event){
+          mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
-              })
+          })
 
           
           )}
-      });
+    });
 
-      
-  });
+    
+});
 
   jQuery.ajaxPrefilter(function(options) {
     if (options.crossDomain && jQuery.support.cors) {
@@ -1018,108 +1022,108 @@ $(document).on('click', '#gboyButton',function(event) {
 // NES BUTTON API PULL AND DOM CREATION
 
 $(document).on('click', '#nesButton',function(event) {
-   
+     
 
-    var queryURL = "https://api-v3.igdb.com/games";
+  var queryURL = "https://api-v3.igdb.com/games";
 
-    $.ajax({
-      url: queryURL,
-      method: "POST",
-      headers: {
-          'user-key' : 'f13f3ae70c0329eaf198249bba188dbd',
-          'Accept' : 'Application/JSON'
-      }, 
+  $.ajax({
+    url: queryURL,
+    method: "POST",
+    headers: {
+        'user-key' : 'f13f3ae70c0329eaf198249bba188dbd',
+        'Accept' : 'Application/JSON'
+    }, 
 
-      data : 'fields name,total_rating,cover.url,release_dates.human,platforms.name,summary,genres.name,screenshots.url; where platforms = 18 ; sort popularity desc; limit 50;'
-      })
+    data : 'fields name,total_rating,cover.url,release_dates.human,platforms.name,summary,genres.name,screenshots.url; where platforms = 18 ; sort popularity desc; limit 50;'
+    })
 
-      .then(function(response) {
-        var results = response;
-        coverimage = results[i].cover
-        console.log(response);
+    .then(function(response) {
+      var results = response;
+      console.log(response);
 
-        var table = $('#results');
-        var tBody = $('tbody');
-        tBody.empty();      
+      var table = $('#results');
+      var tBody = $('tbody');
+      tBody.empty();      
 
-        for (var i = 0; i < 50; i++) {
-            // Variables for main table
-            var tRow = $('<tr>');
-            tRow.appendTo(tBody);
+      for (var i = 0; i < 50; i++) {
+          // Variables for main table
+          coverimage = results[i].cover
+          var tRow = $('<tr>');
+          tRow.appendTo(tBody);
 
-            var title = $('<th>').text(results[i].name);
-            title.appendTo(tRow);
+          var title = $('<th>').text(results[i].name);
+          title.appendTo(tRow);
 
 
-            if (coverimage.url === undefined) {
-                source = 'homestaymatch.com/images/no-image-available.png';
-            }
+          if (coverimage === undefined) {
+              source = 'homestaymatch.com/images/no-image-available.png';
+          }
 
-            else {
-                source = String(coverimage.url);
-            }
-                
-            var image = $('<img>');
-            image.attr("src", "https://" + source);
-            image.appendTo(tRow);
+          else {
+              source = String(coverimage.url);
+          }
+              
+          var image = $('<img>');
+          image.attr("src", "https://" + source);
+          image.appendTo(tRow);
 
-            var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
-            rating.appendTo(tRow);
+          var rating = $('<th>').text(Math.round(parseInt(results[i].total_rating)));
+          rating.appendTo(tRow);
 
-            let rdate = results[i].release_dates[0];
-            var releaseDates = $('<th>').text(rdate.human);
-            releaseDates.appendTo(tRow);
+          let rdate = results[i].release_dates[0];
+          var releaseDates = $('<th>').text(rdate.human);
+          releaseDates.appendTo(tRow);
 
-            var mcBut = $('<button>More Info</button>');
-            $(mcBut).addClass('clear button warning').attr('data-open', 'moreContent');
-            mcBut.appendTo(tRow);
+          var mcBut = $('<button>More Info</button>');
+          $(mcBut).addClass('clear button warning').attr('data-open', 'moreContent');
+          mcBut.appendTo(tRow);
 
-            // Create mcBox and dynamically hide/show
-            
-            var mcBox = $('<div>').appendTo(tRow);
-            mcBox.hide();
-            var mcTitle = $('<h4>').text(results[i].name);
-            mcTitle.appendTo(mcBox);
-            
-            if (results[i].summary != undefined || results[i].summary != null) {
-              var mcSummary = $('<p>').text(results[i].summary);
-              mcSummary.appendTo(mcBox);
-            }
-            
-            if (results[i].genres != undefined || results[i].genres != null) {
-                let mcGen = results[i].genres[0];
-                var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
-                mcGenres.appendTo(mcBox);
-            }
-            
-            
-            for (y = 0; y < 3; y++) {
-              if (results[i].screenshots != undefined) {
-                let mcScreenSource = results[i].screenshots[y];
+          // Create mcBox and dynamically hide/show
+          
+          var mcBox = $('<div>').appendTo(tRow);
+          mcBox.hide();
+          var mcTitle = $('<h4>').text(results[i].name);
+          mcTitle.appendTo(mcBox);
+          
+          if (results[i].summary != undefined || results[i].summary != null) {
+            var mcSummary = $('<p>').text(results[i].summary);
+            mcSummary.appendTo(mcBox);
+          }
+
+          if (results[i].genres != undefined || results[i].genres != null) {
+              let mcGen = results[i].genres[0];
+              var mcGenres = $('<p>').text('Genre: ' + mcGen.name);
+              mcGenres.appendTo(mcBox);
+          }
+          
+          
+          for (y = 0; y < 3; y++) {
+            if (results[i].screenshots != undefined) {
+              let mcScreenSource = results[i].screenshots[y];
+              if (mcScreenSource != undefined || mcScreenSource != null) {
                 let mcSource = mcScreenSource.url;
-                if (mcScreenSource.url != undefined || mcScreenSource.url != null) {
-                  var mcPic = $('<img>');
-                  mcPic.attr("src", "https://" + mcSource);
-                  mcPic.appendTo(mcBox);
-                  mcPic.addClass('screenshots');
-                }
+                var mcPic = $('<img>');
+                mcPic.attr("src", "https://" + mcSource);
+                mcPic.appendTo(mcBox);
+                mcPic.addClass('screenshots');
               }
-                
-                
             }
-            
+              
+              
+          }
+          
 
-            mcBut.on('click', (function(event){
+          mcBut.on('click', (function(event){
               console.log('sup');
               $(this).nextAll().toggle();
-              })
+          })
 
           
           )}
-      });
+    });
 
-      
-  });
+    
+});
 
   jQuery.ajaxPrefilter(function(options) {
     if (options.crossDomain && jQuery.support.cors) {
