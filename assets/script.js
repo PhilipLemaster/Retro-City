@@ -1159,7 +1159,8 @@ $(document).on('click', '#sTitleButton',function(event) {
             var title = $('<th>').text(results[i].name);
             title.appendTo(tRow);
 
-            var source = String(results[i].image?.original);
+            var imageResults = results[i].image
+            var source = String(imageResults.original);
             var image = $('<img>');
             image.attr("src", source);
             image.appendTo(tRow);
@@ -1196,8 +1197,9 @@ $(document).on('click', '#sTitleButton',function(event) {
             var genres = $('<p>').text('Genres: ');
             genres.appendTo(mcBox);
             for (y = 0; y < 3; y++) {
-                if (results[i].genres[y]?.name != undefined)
-                var genreSpan = $('<span>').text(results[i].genres[y]?.name + ', ')
+                if (results[i].genres[y] != undefined)
+                var genreResults = results[i].genres[y]
+                var genreSpan = $('<span>').text(genreResults.name + ', ')
                 genreSpan.appendTo(genres);
             }       
 
@@ -1307,7 +1309,8 @@ $(document).on('click', '#sGPbutton',function(event) {
             }
 
             if (results[i].release_dates != undefined || results[i].release_dates != null) {
-                var releaseDates = $('<th>').text(results[i].release_dates[0]?.human);
+                var releaseDateResults = results[i].release_dates[0]
+                var releaseDates = $('<th>').text(releaseDateResults.human);
                 releaseDates.appendTo(tRow);
             }
 
