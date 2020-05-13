@@ -1282,6 +1282,7 @@ $(document).on('click', '#sGPbutton',function(event) {
         var tBody = $('tbody');
         tBody.empty();      
 
+
         for (var i = 0; i < 100; i++) {
             // Variables for main table
             var tRow = $('<tr>');
@@ -1290,8 +1291,11 @@ $(document).on('click', '#sGPbutton',function(event) {
             var title = $('<th>').text(results[i].name);
             title.appendTo(tRow);
 
+            coverimage = results[i].cover;
+            
 
-            if (coverimage.url === undefined) {
+
+            if (coverimage === undefined) {
                 source = 'homestaymatch.com/images/no-image-available.png';
             }
 
@@ -1338,10 +1342,10 @@ $(document).on('click', '#sGPbutton',function(event) {
             
             
             for (y = 0; y < 3; y++) {
-              if (results[i].screenshots != undefined) {
+              if (results[i].screenshots != undefined || results[i].screenshots != null) {
                 let mcScreenSource = results[i].screenshots[y];
-                let mcSource = mcScreenSource.url;
-                if (mcScreenSource.url != undefined || mcScreenSource.url != null) {
+                if (mcScreenSource != undefined || mcScreenSource != null) {
+                  let mcSource = mcScreenSource.url;
                   var mcPic = $('<img>');
                   mcPic.attr("src", "https://" + mcSource);
                   mcPic.appendTo(mcBox);
