@@ -1151,7 +1151,7 @@ $(document).on('click', '#sTitleButton',function(event) {
         var tBody = $('tbody');
         tBody.empty();      
 
-        for (var i = 0; i < 50; i++) {
+        for (var i = 0; i < 100; i++) {
             // Variables for main table
             var tRow = $('<tr>');
             tRow.appendTo(tBody);
@@ -1293,8 +1293,6 @@ $(document).on('click', '#sGPbutton',function(event) {
 
             coverimage = results[i].cover;
             
-
-
             if (coverimage === undefined) {
                 source = 'homestaymatch.com/images/no-image-available.png';
             }
